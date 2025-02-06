@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "3NMcONiYgqRdWqMU0Few4i",
+    "name" : "fmi_04769777",
+    "type" : "MI_TASK",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "21981"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "dat",
+  "updateTime" : "2025-02-06T11:11:41.872Z",
+  "objectRefs" : [ {
+    "id" : "5zZfbr402sIcILmaLLrwWT",
+    "name" : "INWPF3M1V35-AAD",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01D4T425000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
