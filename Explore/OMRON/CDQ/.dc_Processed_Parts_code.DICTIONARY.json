@@ -1,0 +1,27 @@
+{
+  "objectInfo" : {
+    "id" : "5PqtvLnIqwQiWvVQRC9VQu",
+    "name" : "dc_Processed_Parts_code",
+    "type" : "DICTIONARY",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "5PqtvLnIqwQiWvVQRC9VQu"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "加工品分類コード：OASIS品目グループ決定用",
+        "contentType" : "Binary",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "updateTime" : "2025-02-18T11:42:05.133Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

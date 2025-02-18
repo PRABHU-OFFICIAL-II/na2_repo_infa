@@ -1,0 +1,53 @@
+{
+  "objectInfo" : {
+    "id" : "9JEBFcNAxQBlAWlEriAGeG",
+    "name" : "mpl_api_login",
+    "type" : "DMAPPLET",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01D4T440000000000002"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "IICSのログインAPI",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-02-18T11:42:05.131Z",
+  "objectRefs" : [ {
+    "id" : "itrP8xuoo4GdICMLssPomu",
+    "name" : "ism_apiResponse_login",
+    "type" : "STRUCTURE_DISCOVERY",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01D4T430000000000002"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "IICSのログインAPI",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/OMRON/CDI"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

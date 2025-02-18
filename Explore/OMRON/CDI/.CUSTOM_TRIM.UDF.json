@@ -1,0 +1,30 @@
+{
+  "objectInfo" : {
+    "id" : "fe9TCwdCQAsbbl4BxKQikh",
+    "name" : "CUSTOM_TRIM",
+    "type" : "UDF",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01D4T441000000000002"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "前後のSpaceを(半角全角問わず)トリミングする。\n値がない場合（nullやSpaceのみも含む）、Blankで出力する。",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-02-18T11:42:05.132Z",
+  "objectRefs" : [ ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
