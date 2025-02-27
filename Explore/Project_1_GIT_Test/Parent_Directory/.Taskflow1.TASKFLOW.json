@@ -1,0 +1,47 @@
+{
+  "objectInfo" : {
+    "id" : "5NDdABMrs6MbJw3bPD3FET",
+    "name" : "Taskflow1",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "7ESGzqzm5Y6tMFy-gt-73592-2025-02-27T08:30:08.951Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-02-27T08:30:54.964Z",
+  "objectRefs" : [ {
+    "id" : "767jSuvefe0kdiERytgqWK",
+    "name" : "mt_BINARY_ENCODING_CHECK",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "01D4T40Z00000000000C"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Project_1_GIT_Test/Dependent_Directory"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}
