@@ -1,0 +1,285 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>XPy07duD2L5SeE1-gt-1289879-2025-02-28T16:23:35.804Z::tf.xml</types1:EntryId>
+      <types1:Name>add_filename</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>ppp</types1:CreatedBy>
+      <types1:CreationDate>2025-02-28T16:23:36Z</types1:CreationDate>
+      <types1:ModifiedBy>ppp</types1:ModifiedBy>
+      <types1:ModificationDate>2025-03-03T06:16:07Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>ppp</types1:PublishedBy>
+      <types1:PublicationDate>2025-03-03T06:16:13Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.add_filename/add_filename.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="add_filename"
+                   name="add_filename"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="DATE" type="datetime">
+                  <options>
+                     <option name="thirtyMinutesIncrement">true</option>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="DATE2" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="Datatask1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+               <parameter description="" name="untitled1" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <tempFields>
+               <field description="1" name="curr" type="double">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Ingestion Task 1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:FMI-04781618-541TlQptRwtcP6Y3uDHBi0</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task 1" type="reference">
+                  <options>
+                     <option name="referenceTo">$po:mt-GET-FILE-NAMES-2wNXfu7ql9hgDn2jZuVTMB</option>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="false" tracingLevel="verbose">
+               <rest/>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="m6a8wvp8" targetId="m6a8wvp7"/>
+               </start>
+               <assignment id="m6a8wvp7">
+                  <title>GET_DATE</title>
+                  <operation source="formula" to="input.DATE">
+                     <expression language="XQuery">fn:current-dateTime()</expression>
+                  </operation>
+                  <operation source="formula" to="input.DATE2">
+                     <expression language="XQuery">util:format($input.DATE ,'YYYYMMDD')</expression>
+                  </operation>
+                  <link id="m7smbnn9" targetId="m7smbnng"/>
+               </assignment>
+               <assignment id="m7smbnl8">
+                  <title>Assignment 1</title>
+                  <operation source="formula" to="temp.curr">
+                     <expression language="XQuery">$temp.curr+1</expression>
+                  </operation>
+                  <link id="m7smbnlp" targetId="m7smbnln"/>
+               </assignment>
+               <eventContainer id="m7smbnng">
+                  <service id="m7smbnn8">
+                     <title>Ingestion Task 1</title>
+                     <serviceName>DIExecuteServiceTaskIngestionTaskImpl</serviceName>
+                     <serviceGUID/>
+                     <serviceInput>
+                        <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                        <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                        <parameter name="Task Name" source="constant" updatable="true">FMI_04781618</parameter>
+                        <parameter name="GUID" source="constant" updatable="true">541TlQptRwtcP6Y3uDHBi0</parameter>
+                        <parameter name="Task Type" source="constant" updatable="true">MI_TASK</parameter>
+                        <parameter name="serviceProviderId" source="constant" updatable="true">filelistener</parameter>
+                        <parameter name="serviceProviderContextPath"
+                                   source="constant"
+                                   updatable="true">mitask/</parameter>
+                        <parameter name="taskField" source="nested">
+                           <operation source="field" to="FMI-04781618-541TlQptRwtcP6Y3uDHBi0">temp.Ingestion Task 1</operation>
+                           <operation source="constant"
+                                      to="FMI-04781618-541TlQptRwtcP6Y3uDHBi0/input[1]/CATEGORYGeneral[1]/sourceConnectionType">local</operation>
+                           <operation source="constant"
+                                      to="FMI-04781618-541TlQptRwtcP6Y3uDHBi0/input[1]/CATEGORYGeneral[1]/targetConnectionType">local</operation>
+                           <operation source="constant"
+                                      to="FMI-04781618-541TlQptRwtcP6Y3uDHBi0/input[1]/CATEGORYGeneral[1]/maxFileLimit">1050</operation>
+                        </parameter>
+                     </serviceInput>
+                     <serviceOutput>
+                        <operation source="field" to="temp.Ingestion Task 1/output/successFiles">successFiles</operation>
+                        <operation source="field" to="temp.Ingestion Task 1/output/failedFiles">failedFiles</operation>
+                        <operation source="field" to="temp.Ingestion Task 1/output/fileDetails">fileDetails</operation>
+                     </serviceOutput>
+                  </service>
+                  <link id="m7smbnop" targetId="m7smbnoo"/>
+                  <events>
+                     <catch faultField="temp.Ingestion Task 1/fault"
+                            id="m7smbnnf"
+                            interrupting="true"
+                            name="error">
+                        <suspend/>
+                     </catch>
+                  </events>
+               </eventContainer>
+               <container id="m7smbnoo" type="exclusive">
+                  <title>Decision 1</title>
+                  <flow id="m7smbnos">
+                     <eventContainer id="m7smbnpo">
+                        <service id="m7smbnp1">
+                           <title>Data Task 1</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">mt_GET_FILE_NAMES</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">2wNXfu7ql9hgDn2jZuVTMB</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="mt-GET-FILE-NAMES-2wNXfu7ql9hgDn2jZuVTMB">temp.Data Task 1</operation>
+                                 <operation source="formula"
+                                            to="mt-GET-FILE-NAMES-2wNXfu7ql9hgDn2jZuVTMB/inout[1]/FileNames">
+                                    <expression language="XQuery">$temp.IngestionTask1[1]/output[1]/fileDetails[$temp.curr ]/path </expression>
+                                 </operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Data Task 1/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Data Task 1/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Data Task 1/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.Data Task 1/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.Data Task 1/output/FirstErrorCode">First Error Code</operation>
+                              <operation source="field" to="temp.Data Task 1/inout/FileNames">FileNames</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Data Task 1/fault"
+                                  id="m7smbnd8"
+                                  interrupting="true"
+                                  name="error">
+                              <suspend/>
+                           </catch>
+                           <catch faultField="temp.Data Task 1/fault"
+                                  id="m7smbnd9"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="m7smbnot" targetId="m7smbnoo" type="containerLink"/>
+                  </flow>
+                  <flow id="m7smbnov">
+                     <link id="m7smbnow" targetId="m7smbnoo" type="containerLink"/>
+                  </flow>
+                  <link id="m7smbnor" targetId="m7smbnos" type="containerLink">
+                     <condition source="formula">
+                        <function name="less-or-equals">
+                           <arg name="left">{$temp.curr}</arg>
+                           <arg name="right">{$temp.IngestionTask1[1]/output[1]/successFiles }</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="m7smbnp0" targetId="m7smbnl8"/>
+                  <link id="m7smbnou" targetId="m7smbnov" type="containerLink"/>
+               </container>
+               <jumpTo id="m7smbnln">
+                  <link id="m7smbnlo" targetId="m7smbnoo"/>
+               </jumpTo>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="FMI-04781618-541TlQptRwtcP6Y3uDHBi0"
+                              isByCopy="true"
+                              name="FMI-04781618-541TlQptRwtcP6Y3uDHBi0">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Input Parameters"
+                            name="input"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-GET-FILE-NAMES-2wNXfu7ql9hgDn2jZuVTMB"
+                              isByCopy="true"
+                              name="mt-GET-FILE-NAMES-2wNXfu7ql9hgDn2jZuVTMB">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>71QJJ4A8TqvkBYQTjfxAqS</types1:GUID>
+      <types1:DisplayName>add_filename</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-04-28T06:00:26.219Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
