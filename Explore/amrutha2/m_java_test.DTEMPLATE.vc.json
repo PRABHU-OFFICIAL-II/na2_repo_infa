@@ -1,0 +1,276 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_java_test",
+    "links" : [
+      {
+        "link" : "Java -> Target"
+      },
+      {
+        "link" : "Source -> Java"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-05-05T07:12:51.699Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "file_path"
+            },
+            "name" : "file_path",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@8yGWo4KZC38bAH0qHXiKM5",
+          "connectionName" : "FLAT FILE",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "excel_path.out",
+            "label" : "excel_path.out",
+            "objectName" : "excel_path.out",
+            "path" : "excel_path.out",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "file_path",
+                "fieldType" : "CONNECTOR",
+                "label" : "file_path",
+                "nativeName" : "file_path",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "excel_path.out"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "true",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-05-05T07:12:51.699Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@8yGWo4KZC38bAH0qHXiKM5",
+          "connectionName" : "FLAT FILE",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "excel_tgt.out",
+            "label" : "excel_tgt.out",
+            "path" : "excel_tgt.out",
+            "retainMetadata" : "false",
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-05-05T07:20:22.953Z",
+        "name" : "Java",
+        "advancedProperties" : [
+          {
+            "name" : "Is Active",
+            "value" : "false"
+          },
+          {
+            "name" : "Tracing Level",
+            "value" : "Verbose Data"
+          },
+          {
+            "name" : "Transformation Scope",
+            "value" : "Row"
+          },
+          {
+            "name" : "Update Strategy Transformation",
+            "value" : "false"
+          },
+          {
+            "name" : "Enable_High_Precision",
+            "value" : "false"
+          },
+          {
+            "name" : "Use_Nano_Seconds_In_Datetime",
+            "value" : "false"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "classPath" : "D:/Scripts/poi-5.3.0.jar;D:/Scripts/poi-ooxml-5.3.0.jar",
+        "helperCodeSnippet" : "// TODO: Declare static and non-static partition-level variables and functions here.\n// For example,\n//\n// static int countNullRows;   // Counts the number of output rows across all partitions that contains null values.\n// int partCountNullRows;      // Counts the number of output rows in this partition that contains null values.\n//\n// static Object lock = new Object();   // Lock to synchronize countNullRows.\n",
+        "importPackagesSnippet" : "// TODO: Enter the Java packages to be imported here.\n// For example, if you want to use Hashtable in any of the snippets, import it as shown below:\n//\n// import java.util.Hashtable;\nimport java.io.FileInputStream;\nimport java.io.IOException;\nimport org.apache.poi.ss.usermodel.Sheet;\nimport org.apache.poi.ss.usermodel.Workbook;\nimport org.apache.poi.ss.usermodel.WorkbookFactory;\n\n",
+        "lastCompilationFailed" : "false",
+        "onEndOfDataMethodSnippet" : "// TODO: Enter the code that executes after the transformation receives all of the input data here.\n//\n// logInfo(\"The number of null rows for this partition is: \" + partCountNullRows);\n// synchronized(lock)\n// {\n//\t\tlogInfo(\"The total number of null rows across partitions until now is: \" +  countNullRows);\n// }\n",
+        "onInputRowMethodSnippet" : "try (FileInputStream fis = new FileInputStream(file_path);\n    Workbook wb = WorkbookFactory.create(fis)) {\n    Sheet sheet = wb.getSheetAt(wb.getActiveSheetIndex());\n    ActiveSheet = sheet.getSheetName();\n} catch (IOException e) {\n    ActiveSheet = \"\";\n    logError(\"Error processing Excel file: \" + file_path + \" - \" + e.getMessage());\n} catch (Exception e) {\n    ActiveSheet = \"\";\n    logError(\"General error processing Excel file: \" + file_path + \" - \" + e.getMessage());\n}\n\n// TODO: Enter the code to process an input row here.\n// You can access input column data by referencing the input column name.\n// You can set output column data by referencing the output column name.\n// For example, if\n// input1 and input2 are input fields of type int, and\n// output1 and output2 are output fields of type int,\n// then the transformation logic might be as follows:\n//\n// if(!isNull(\"input1\") && !isNull(\"input1\"))\n// {\n//\t\toutput1 = input1 + input2;\n//\t\toutput2 = input1 - input2;\n// }\n// else\n// {\n//\t\tsetNull(\"output1\");\n//\t\tsetNull(\"output2\");\n//\t\tpartCountNullRows++;\n//\t\tsynchronized(lock)\n//\t\t{\n//\t\t\tcountNullRows++;\n//\t\t}\n// }\n",
+        "onTransactionMethodSnippet" : "// TODO: Enter the code that executes when the transformation receives a transaction here.\n",
+        "runtimeEnvId" : "01D4T425000000000004",
+        "sorterModeJava" : "SIMPLE",
+        "unmodifiedCompilation" : "true",
+        "compiledInputFields" : [
+          {
+            "name" : "file_path",
+            "precision" : 255,
+            "scale" : 0,
+            "type" : "string"
+          }
+        ],
+        "outputFields" : [
+          {
+            "name" : "ActiveSheet",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 200,
+            "scale" : 0
+          }
+        ]
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-05-29 15:26:55 JST"
+}
