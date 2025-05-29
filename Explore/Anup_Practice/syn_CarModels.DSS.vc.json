@@ -1,0 +1,282 @@
+{
+  "name" : "syn_CarModels",
+  "maxLogs" : 10,
+  "sourceConnectionId" : "@8UMGeSqK4kjk2swhcPTzU4",
+  "sourceConnectionName" : "AM_MSSQL_CONN",
+  "targetConnectionId" : "@8UMGeSqK4kjk2swhcPTzU4",
+  "targetConnectionName" : "AM_MSSQL_CONN",
+  "sourceObjects" : [
+    {
+      "name" : "Car_Models",
+      "label" : "Car_Models",
+      "metadataUpdated" : false
+    }
+  ],
+  "targetObject" : "Car_Models",
+  "targetObjectLabel" : "Car_Models",
+  "operation" : "Insert",
+  "maxRows" : 0,
+  "truncateTarget" : true,
+  "bulkApiDBTarget" : false,
+  "verbose" : false,
+  "targetMetadataUpdated" : false,
+  "queryAll" : false,
+  "srcSettings" : {
+    "showLabels" : false,
+    "naturalOrder" : true
+  },
+  "tgtSettings" : {
+    "showLabels" : false,
+    "naturalOrder" : true
+  },
+  "cfSettings" : {
+    "showLabels" : false,
+    "naturalOrder" : false
+  },
+  "bulkApi" : false,
+  "bulkApiSerialMode" : false,
+  "bulkApiMonitor" : false,
+  "isTargetObjectSfCustom" : false,
+  "fieldMaps" : [
+    {
+      "targetField" : {
+        "name" : "Model_Company",
+        "type" : "varchar",
+        "uniqueName" : "Model_Company",
+        "label" : "Model_Company",
+        "parentObject" : "Car_Models",
+        "pcType" : "STRING",
+        "precision" : 20,
+        "scale" : 0,
+        "columnIndex" : 0,
+        "filterType" : "STRING",
+        "linkedFields" : [
+          "Model_Company"
+        ],
+        "showLabel" : false,
+        "naturalOrder" : 0,
+        "key" : false,
+        "nullable" : true,
+        "createable" : false,
+        "externalId" : false,
+        "updateable" : true,
+        "unique" : false,
+        "sfIdLookup" : false,
+        "filterable" : true,
+        "waterMarkKey" : false,
+        "calculated" : false
+      },
+      "expression" : " Upper(Model_Company) "
+    },
+    {
+      "targetField" : {
+        "name" : "Model_name",
+        "type" : "varchar",
+        "uniqueName" : "Model_name",
+        "label" : "Model_name",
+        "parentObject" : "Car_Models",
+        "pcType" : "STRING",
+        "precision" : 20,
+        "scale" : 0,
+        "columnIndex" : 1,
+        "filterType" : "STRING",
+        "linkedFields" : [
+          "Model_name"
+        ],
+        "showLabel" : false,
+        "naturalOrder" : 1,
+        "key" : false,
+        "nullable" : true,
+        "createable" : false,
+        "externalId" : false,
+        "updateable" : true,
+        "unique" : false,
+        "sfIdLookup" : false,
+        "filterable" : true,
+        "waterMarkKey" : false,
+        "calculated" : false
+      },
+      "expression" : "Model_name"
+    },
+    {
+      "targetField" : {
+        "name" : "Make_Year",
+        "type" : "varchar",
+        "uniqueName" : "Make_Year",
+        "label" : "Make_Year",
+        "parentObject" : "Car_Models",
+        "pcType" : "STRING",
+        "precision" : 20,
+        "scale" : 0,
+        "columnIndex" : 2,
+        "filterType" : "STRING",
+        "linkedFields" : [
+          "Make_Year"
+        ],
+        "showLabel" : false,
+        "naturalOrder" : 2,
+        "key" : false,
+        "nullable" : true,
+        "createable" : false,
+        "externalId" : false,
+        "updateable" : true,
+        "unique" : false,
+        "sfIdLookup" : false,
+        "filterable" : true,
+        "waterMarkKey" : false,
+        "calculated" : false
+      },
+      "expression" : "Make_Year"
+    },
+    {
+      "targetField" : {
+        "name" : "Color",
+        "type" : "varchar",
+        "uniqueName" : "Color",
+        "label" : "Color",
+        "parentObject" : "Car_Models",
+        "pcType" : "STRING",
+        "precision" : 20,
+        "scale" : 0,
+        "columnIndex" : 3,
+        "filterType" : "STRING",
+        "linkedFields" : [
+          "Color"
+        ],
+        "showLabel" : false,
+        "naturalOrder" : 3,
+        "key" : false,
+        "nullable" : true,
+        "createable" : false,
+        "externalId" : false,
+        "updateable" : true,
+        "unique" : false,
+        "sfIdLookup" : false,
+        "filterable" : true,
+        "waterMarkKey" : false,
+        "calculated" : false
+      },
+      "expression" : "Color"
+    }
+  ],
+  "sourceFields" : [
+    {
+      "name" : "Model_Company",
+      "type" : "varchar",
+      "uniqueName" : "Model_Company",
+      "label" : "Model_Company",
+      "parentObject" : "Car_Models",
+      "pcType" : "STRING",
+      "precision" : 20,
+      "scale" : 0,
+      "columnIndex" : 0,
+      "filterType" : "STRING",
+      "linkedFields" : [
+        "Model_Company"
+      ],
+      "showLabel" : false,
+      "naturalOrder" : 0,
+      "key" : false,
+      "nullable" : true,
+      "createable" : false,
+      "externalId" : false,
+      "updateable" : true,
+      "unique" : false,
+      "sfIdLookup" : false,
+      "filterable" : true,
+      "waterMarkKey" : false,
+      "calculated" : false
+    },
+    {
+      "name" : "Model_name",
+      "type" : "varchar",
+      "uniqueName" : "Model_name",
+      "label" : "Model_name",
+      "parentObject" : "Car_Models",
+      "pcType" : "STRING",
+      "precision" : 20,
+      "scale" : 0,
+      "columnIndex" : 1,
+      "filterType" : "STRING",
+      "linkedFields" : [
+        "Model_name"
+      ],
+      "showLabel" : false,
+      "naturalOrder" : 1,
+      "key" : false,
+      "nullable" : true,
+      "createable" : false,
+      "externalId" : false,
+      "updateable" : true,
+      "unique" : false,
+      "sfIdLookup" : false,
+      "filterable" : true,
+      "waterMarkKey" : false,
+      "calculated" : false
+    },
+    {
+      "name" : "Make_Year",
+      "type" : "varchar",
+      "uniqueName" : "Make_Year",
+      "label" : "Make_Year",
+      "parentObject" : "Car_Models",
+      "pcType" : "STRING",
+      "precision" : 20,
+      "scale" : 0,
+      "columnIndex" : 2,
+      "filterType" : "STRING",
+      "linkedFields" : [
+        "Make_Year"
+      ],
+      "showLabel" : false,
+      "naturalOrder" : 2,
+      "key" : false,
+      "nullable" : true,
+      "createable" : false,
+      "externalId" : false,
+      "updateable" : true,
+      "unique" : false,
+      "sfIdLookup" : false,
+      "filterable" : true,
+      "waterMarkKey" : false,
+      "calculated" : false
+    },
+    {
+      "name" : "Color",
+      "type" : "varchar",
+      "uniqueName" : "Color",
+      "label" : "Color",
+      "parentObject" : "Car_Models",
+      "pcType" : "STRING",
+      "precision" : 20,
+      "scale" : 0,
+      "columnIndex" : 3,
+      "filterType" : "STRING",
+      "linkedFields" : [
+        "Color"
+      ],
+      "showLabel" : false,
+      "naturalOrder" : 3,
+      "key" : false,
+      "nullable" : true,
+      "createable" : false,
+      "externalId" : false,
+      "updateable" : true,
+      "unique" : false,
+      "sfIdLookup" : false,
+      "filterable" : true,
+      "waterMarkKey" : false,
+      "calculated" : false
+    }
+  ],
+  "allowNullUpdates" : false,
+  "targetBatchSize" : 200,
+  "assignmentRuleId" : "-1",
+  "assignmentRuleType" : "None",
+  "createSuccessFile" : false,
+  "bulkApiHardDelete" : false,
+  "srcRuntimeAttrs" : { },
+  "tgtRuntimeAttrs" : { },
+  "parameterFileEncoding" : "UTF-8",
+  "vcsExportTime" : "2025-05-29 09:15:12 PDT"
+}
