@@ -1,0 +1,53 @@
+{
+  "objectInfo" : {
+    "id" : "4ijcrkIWZ6ijFbj3YBhH4F",
+    "name" : "EXGS-C360-BS-ERICHMNT-API",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "000QML2700000000002G"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "000QML2800000000003L",
+        "value" : "4ijcrkIWZ6ijFbj3YBhH4F@Enrichment_APIOperation"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-06-26T06:15:48.820Z",
+  "objectRefs" : [ {
+    "id" : "h8MdVZPRIKBdgcK0Q5VhYb",
+    "name" : "FF_Source_rid",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "000QML0B00000000014J"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

@@ -1,0 +1,139 @@
+{
+  "objectInfo" : {
+    "id" : "7UOr9zuBkoPke9hAlxTq2m",
+    "name" : "tf_rid_BULK_LOAD_PROCESSING",
+    "type" : "TASKFLOW",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "qxWPQE8jIw8jIw8-gt-8741411-2025-04-17T12:58:46.271Z::tf.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "updateTime" : "2025-06-26T06:15:48.827Z",
+  "objectRefs" : [ {
+    "id" : "24qIL0hv1GQgzfq6Q54gYQ",
+    "name" : "syn_rid_OutletsLoad",
+    "type" : "DSS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "000QML0I00000000005Z"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI11Apr/Riddhi_06"
+  }, {
+    "id" : "2M9zq6SBeQjfqHvukHHn8q",
+    "name" : "syn_rid_upsert",
+    "type" : "DSS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "000QML0I00000000005W"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI11Apr/Riddhi_06"
+  }, {
+    "id" : "3Wbq4xOczOGbGmKfEE3yyb",
+    "name" : "dt_rid_DataTransfer",
+    "type" : "DTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "2icLtden9qHdWnTYpBy7Uh"
+      },
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI11Apr/Riddhi_06"
+  }, {
+    "id" : "2dwnmgThBjHgSaYmqDbGk3",
+    "name" : "mt_rid_InOutParameter_Task",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "000QML0Z0000000001NT"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI11Apr/Riddhi_06"
+  }, {
+    "id" : "7zKkBax25IKckh1ZzgCycc",
+    "name" : "syn_rid_lookup",
+    "type" : "DSS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "000QML0I00000000005X"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CDI11Apr/Riddhi_06"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

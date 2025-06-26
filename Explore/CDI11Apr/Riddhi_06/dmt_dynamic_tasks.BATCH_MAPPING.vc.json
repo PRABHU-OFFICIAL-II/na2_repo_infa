@@ -1,0 +1,92 @@
+{
+  "name" : "dmt_dynamic_tasks",
+  "state" : "VALID",
+  "mappingId" : "000QML170000000001MA",
+  "mappingTemplateName" : "m_rid_dynamic",
+  "mappingDocType" : "MAPPING",
+  "runtimeEnvironmentId" : "000QML250000000000HA",
+  "runtimeEnvironmentName" : "invlinux02.informatica.com",
+  "params" : [
+    {
+      "uniqueName" : "Source:src_connection",
+      "name" : "src_connection",
+      "txName" : "Source",
+      "type" : "SOURCE_CONNECTION",
+      "scope" : "LOCAL",
+      "label" : "src_connection"
+    },
+    {
+      "uniqueName" : "Source:src_obj",
+      "name" : "src_obj",
+      "txName" : "Source",
+      "type" : "SOURCE_OBJECT",
+      "scope" : "LOCAL",
+      "label" : "src_obj"
+    }
+  ],
+  "groups" : [
+    {
+      "groupName" : "Group_1",
+      "enabled" : true
+    }
+  ],
+  "jobs" : [
+    {
+      "jobName" : "Job_1",
+      "jobType" : "USER",
+      "enabled" : true,
+      "stopOnError" : false,
+      "stopOnWarning" : false,
+      "jobParamBindings" : [
+        {
+          "type" : "Connection",
+          "paramDefn" : "Source:src_connection",
+          "connectionId" : "000QML0B00000000014J",
+          "connectionName" : "FF_Source_rid"
+        },
+        {
+          "type" : "Source",
+          "paramDefn" : "Source:src_obj",
+          "handleSpecialChars" : false,
+          "sourceObject" : {
+            "name" : "Order_Status.csv",
+            "label" : "Order_Status.csv",
+            "metadataUpdated" : false
+          },
+          "isFileList" : false,
+          "currentlyProcessedFileName" : false
+        }
+      ],
+      "group" : "Group_1"
+    },
+    {
+      "jobName" : "Job_2",
+      "jobType" : "USER",
+      "enabled" : true,
+      "stopOnError" : false,
+      "stopOnWarning" : false,
+      "jobParamBindings" : [
+        {
+          "type" : "Connection",
+          "paramDefn" : "Source:src_connection",
+          "connectionId" : "000QML0B00000000014J",
+          "connectionName" : "FF_Source_rid"
+        },
+        {
+          "type" : "Source",
+          "paramDefn" : "Source:src_obj",
+          "handleSpecialChars" : false,
+          "sourceObject" : {
+            "name" : "Outlets.csv",
+            "label" : "Outlets.csv",
+            "metadataUpdated" : false
+          },
+          "isFileList" : false,
+          "currentlyProcessedFileName" : false
+        }
+      ],
+      "group" : "Group_1"
+    }
+  ],
+  "vcsExportTime" : "2025-06-25 23:15:43 PDT"
+}

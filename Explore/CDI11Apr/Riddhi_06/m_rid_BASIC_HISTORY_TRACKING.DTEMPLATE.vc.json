@@ -1,0 +1,1867 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_rid_BASIC_HISTORY_TRACKING",
+    "links" : [
+      {
+        "link" : "CUSTOMERS -> CURRENT_DATE"
+      },
+      {
+        "link" : "CURRENT_DATE -> INSERT_ELSE_UPDATE",
+        "groupLink" : "DefaultGroup -> INPUT"
+      },
+      {
+        "link" : "INSERT_ELSE_UPDATE -> DIM_CUSTOMER_UPDATE",
+        "groupLink" : "UPDATE -> DefaultGroup"
+      },
+      {
+        "link" : "INSERT_ELSE_UPDATE -> DIM_CUSTOMER_INSERT",
+        "groupLink" : "INSERT -> DefaultGroup"
+      },
+      {
+        "link" : "CUST_SEQ -> DIM_CUSTOMER_INSERT"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-04-18T04:16:56.772Z",
+        "name" : "CUSTOMERS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "CUST_ID"
+            },
+            "name" : "CUST_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "FIRST_NAME"
+            },
+            "name" : "FIRST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LAST_NAME"
+            },
+            "name" : "LAST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ADDR1"
+            },
+            "name" : "ADDR1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ADDR2"
+            },
+            "name" : "ADDR2",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CITY"
+            },
+            "name" : "CITY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "STATE"
+            },
+            "name" : "STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "POSTAL_CODE"
+            },
+            "name" : "POSTAL_CODE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PHONE"
+            },
+            "name" : "PHONE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EMAIL"
+            },
+            "name" : "EMAIL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@h8MdVZPRIKBdgcK0Q5VhYb",
+          "connectionName" : "FF_Source_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "INITIAL_CUSTOMERS.CSV",
+            "label" : "INITIAL_CUSTOMERS.CSV",
+            "objectName" : "INITIAL_CUSTOMERS.CSV",
+            "path" : "INITIAL_CUSTOMERS.CSV",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "CUST_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUST_ID",
+                "nativeName" : "CUST_ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "FIRST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "FIRST_NAME",
+                "nativeName" : "FIRST_NAME",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "LAST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "LAST_NAME",
+                "nativeName" : "LAST_NAME",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "ADDR1",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADDR1",
+                "nativeName" : "ADDR1",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "ADDR2",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADDR2",
+                "nativeName" : "ADDR2",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "CITY",
+                "fieldType" : "CONNECTOR",
+                "label" : "CITY",
+                "nativeName" : "CITY",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "STATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "STATE",
+                "nativeName" : "STATE",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "POSTAL_CODE",
+                "fieldType" : "CONNECTOR",
+                "label" : "POSTAL_CODE",
+                "nativeName" : "POSTAL_CODE",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "PHONE",
+                "fieldType" : "CONNECTOR",
+                "label" : "PHONE",
+                "nativeName" : "PHONE",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              },
+              {
+                "name" : "EMAIL",
+                "fieldType" : "CONNECTOR",
+                "label" : "EMAIL",
+                "nativeName" : "EMAIL",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "INITIAL_CUSTOMERS.CSV"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-18T04:16:56.772Z",
+        "name" : "DIM_CUSTOMER_UPDATE",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : [
+          "CUST_ID"
+        ],
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "CUST_SEQ"
+            },
+            "name" : "CUST_SEQ",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CUST_ID"
+            },
+            "name" : "CUST_ID",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "FIRST_NAME"
+            },
+            "name" : "FIRST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LAST_NAME"
+            },
+            "name" : "LAST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ADDR1"
+            },
+            "name" : "ADDR1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ADDR2"
+            },
+            "name" : "ADDR2",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CITY"
+            },
+            "name" : "CITY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "STATE"
+            },
+            "name" : "STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 2,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "POSTAL_CODE"
+            },
+            "name" : "POSTAL_CODE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PHONE"
+            },
+            "name" : "PHONE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 15,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EMAIL"
+            },
+            "name" : "EMAIL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "VALID_DATE"
+            },
+            "name" : "VALID_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@6kp99j5UKURg398y1mxaCR",
+          "connectionName" : "Rid_sql_server",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "DIM_CUSTOMER",
+            "label" : "DIM_CUSTOMER",
+            "objectName" : "DIM_CUSTOMER",
+            "path" : "DIM_CUSTOMER",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "CUST_SEQ",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUST_SEQ",
+                "nativeName" : "CUST_SEQ",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "CUST_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUST_ID",
+                "nativeName" : "CUST_ID",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "FIRST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "FIRST_NAME",
+                "nativeName" : "FIRST_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "LAST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "LAST_NAME",
+                "nativeName" : "LAST_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "ADDR1",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADDR1",
+                "nativeName" : "ADDR1",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "ADDR2",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADDR2",
+                "nativeName" : "ADDR2",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "CITY",
+                "fieldType" : "CONNECTOR",
+                "label" : "CITY",
+                "nativeName" : "CITY",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "STATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "STATE",
+                "nativeName" : "STATE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 2,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "POSTAL_CODE",
+                "fieldType" : "CONNECTOR",
+                "label" : "POSTAL_CODE",
+                "nativeName" : "POSTAL_CODE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "PHONE",
+                "fieldType" : "CONNECTOR",
+                "label" : "PHONE",
+                "nativeName" : "PHONE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 15,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "EMAIL",
+                "fieldType" : "CONNECTOR",
+                "label" : "EMAIL",
+                "nativeName" : "EMAIL",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "VALID_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "VALID_DATE",
+                "nativeName" : "VALID_DATE",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Update"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "CUST_ID",
+              "toField" : {
+                "name" : "CUST_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "FIRST_NAME",
+              "toField" : {
+                "name" : "FIRST_NAME"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "LAST_NAME",
+              "toField" : {
+                "name" : "LAST_NAME"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "ADDR1",
+              "toField" : {
+                "name" : "ADDR1"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "ADDR2",
+              "toField" : {
+                "name" : "ADDR2"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "CITY",
+              "toField" : {
+                "name" : "CITY"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "STATE",
+              "toField" : {
+                "name" : "STATE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "POSTAL_CODE",
+              "toField" : {
+                "name" : "POSTAL_CODE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "PHONE",
+              "toField" : {
+                "name" : "PHONE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "EMAIL",
+              "toField" : {
+                "name" : "EMAIL"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "CURRENT_DATE",
+              "toField" : {
+                "name" : "VALID_DATE"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2025-04-18T04:18:43.564Z",
+        "name" : "CURRENT_CUSTOMERS",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Update Dynamic Cache Condition",
+            "value" : "TRUE"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "multipleMatchPolicy" : "Use Any Value",
+        "returnPortName" : "FIRST_NAME",
+        "unconnected" : "true",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "CUST_SEQ"
+            },
+            "name" : "CUST_SEQ",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CUST_ID"
+            },
+            "name" : "CUST_ID",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "FIRST_NAME"
+            },
+            "name" : "FIRST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LAST_NAME"
+            },
+            "name" : "LAST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ADDR1"
+            },
+            "name" : "ADDR1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ADDR2"
+            },
+            "name" : "ADDR2",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CITY"
+            },
+            "name" : "CITY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "STATE"
+            },
+            "name" : "STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 2,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "POSTAL_CODE"
+            },
+            "name" : "POSTAL_CODE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PHONE"
+            },
+            "name" : "PHONE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 15,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EMAIL"
+            },
+            "name" : "EMAIL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "VALID_DATE"
+            },
+            "name" : "VALID_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "inputPortNames" : [
+          "IN_CUST_ID"
+        ],
+        "lookupConditions" : [
+          {
+            "leftOperand" : "CUST_ID",
+            "operator" : "=",
+            "rightOperand" : "IN_CUST_ID"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@6kp99j5UKURg398y1mxaCR",
+          "connectionName" : "Rid_sql_server",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "DIM_CUSTOMER",
+            "label" : "DIM_CUSTOMER",
+            "objectName" : "DIM_CUSTOMER",
+            "path" : "DIM_CUSTOMER",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "CUST_SEQ",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUST_SEQ",
+                "nativeName" : "CUST_SEQ",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "CUST_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUST_ID",
+                "nativeName" : "CUST_ID",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "FIRST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "FIRST_NAME",
+                "nativeName" : "FIRST_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "LAST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "LAST_NAME",
+                "nativeName" : "LAST_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "ADDR1",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADDR1",
+                "nativeName" : "ADDR1",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "ADDR2",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADDR2",
+                "nativeName" : "ADDR2",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "CITY",
+                "fieldType" : "CONNECTOR",
+                "label" : "CITY",
+                "nativeName" : "CITY",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "STATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "STATE",
+                "nativeName" : "STATE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 2,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "POSTAL_CODE",
+                "fieldType" : "CONNECTOR",
+                "label" : "POSTAL_CODE",
+                "nativeName" : "POSTAL_CODE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "PHONE",
+                "fieldType" : "CONNECTOR",
+                "label" : "PHONE",
+                "nativeName" : "PHONE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 15,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "EMAIL",
+                "fieldType" : "CONNECTOR",
+                "label" : "EMAIL",
+                "nativeName" : "EMAIL",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "VALID_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "VALID_DATE",
+                "nativeName" : "VALID_DATE",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-18T04:19:10.151Z",
+        "name" : "CURRENT_DATE",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "CURRENT_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9,
+            "expFieldType" : "OUTPUT",
+            "expression" : "SYSDATE"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-18T04:30:23.108Z",
+        "name" : "INSERT_ELSE_UPDATE",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "INPUT",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "DEFAULT1",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "INSERT",
+            "output" : "true"
+          },
+          {
+            "input" : "false",
+            "name" : "UPDATE",
+            "output" : "true"
+          }
+        ],
+        "groupFilterConditions" : [
+          {
+            "advancedFilterCondition" : "ISNULL(:LKP.CURRENT_CUSTOMERS(CUST_ID))",
+            "name" : "INSERT"
+          },
+          {
+            "advancedFilterCondition" : "NOT ISNULL(:LKP.CURRENT_CUSTOMERS(CUST_ID))",
+            "name" : "UPDATE"
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-18T04:16:56.772Z",
+        "name" : "DIM_CUSTOMER_INSERT",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "CUST_SEQ"
+            },
+            "name" : "CUST_SEQ",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CUST_ID"
+            },
+            "name" : "CUST_ID",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "FIRST_NAME"
+            },
+            "name" : "FIRST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LAST_NAME"
+            },
+            "name" : "LAST_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ADDR1"
+            },
+            "name" : "ADDR1",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ADDR2"
+            },
+            "name" : "ADDR2",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CITY"
+            },
+            "name" : "CITY",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "STATE"
+            },
+            "name" : "STATE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 2,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "POSTAL_CODE"
+            },
+            "name" : "POSTAL_CODE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PHONE"
+            },
+            "name" : "PHONE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 15,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EMAIL"
+            },
+            "name" : "EMAIL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "VALID_DATE"
+            },
+            "name" : "VALID_DATE",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@6kp99j5UKURg398y1mxaCR",
+          "connectionName" : "Rid_sql_server",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "DIM_CUSTOMER",
+            "label" : "DIM_CUSTOMER",
+            "objectName" : "DIM_CUSTOMER",
+            "path" : "DIM_CUSTOMER",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "CUST_SEQ",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUST_SEQ",
+                "nativeName" : "CUST_SEQ",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "CUST_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUST_ID",
+                "nativeName" : "CUST_ID",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "FIRST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "FIRST_NAME",
+                "nativeName" : "FIRST_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "LAST_NAME",
+                "fieldType" : "CONNECTOR",
+                "label" : "LAST_NAME",
+                "nativeName" : "LAST_NAME",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "ADDR1",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADDR1",
+                "nativeName" : "ADDR1",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "ADDR2",
+                "fieldType" : "CONNECTOR",
+                "label" : "ADDR2",
+                "nativeName" : "ADDR2",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "CITY",
+                "fieldType" : "CONNECTOR",
+                "label" : "CITY",
+                "nativeName" : "CITY",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "STATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "STATE",
+                "nativeName" : "STATE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 2,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "POSTAL_CODE",
+                "fieldType" : "CONNECTOR",
+                "label" : "POSTAL_CODE",
+                "nativeName" : "POSTAL_CODE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "PHONE",
+                "fieldType" : "CONNECTOR",
+                "label" : "PHONE",
+                "nativeName" : "PHONE",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 15,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "EMAIL",
+                "fieldType" : "CONNECTOR",
+                "label" : "EMAIL",
+                "nativeName" : "EMAIL",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              },
+              {
+                "name" : "VALID_DATE",
+                "fieldType" : "CONNECTOR",
+                "label" : "VALID_DATE",
+                "nativeName" : "VALID_DATE",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "DIM_CUSTOMER"
+                  }
+                ]
+              }
+            ]
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "CUST_ID",
+              "toField" : {
+                "name" : "CUST_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "FIRST_NAME",
+              "toField" : {
+                "name" : "FIRST_NAME"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "LAST_NAME",
+              "toField" : {
+                "name" : "LAST_NAME"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "ADDR1",
+              "toField" : {
+                "name" : "ADDR1"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "ADDR2",
+              "toField" : {
+                "name" : "ADDR2"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "CITY",
+              "toField" : {
+                "name" : "CITY"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "STATE",
+              "toField" : {
+                "name" : "STATE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "POSTAL_CODE",
+              "toField" : {
+                "name" : "POSTAL_CODE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "PHONE",
+              "toField" : {
+                "name" : "PHONE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "EMAIL",
+              "toField" : {
+                "name" : "EMAIL"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "CURRENT_DATE",
+              "toField" : {
+                "name" : "VALID_DATE"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "NEXTVAL",
+              "toField" : {
+                "name" : "CUST_SEQ"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2025-04-18T04:37:25.684Z",
+        "name" : "CUST_SEQ",
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "midstream" : "false",
+        "state" : {
+          "currentValue" : "1",
+          "cycle" : "false",
+          "endValue" : "9223372036854775807",
+          "incrementBy" : "1",
+          "numberOfCachedValues" : "0",
+          "reset" : "false",
+          "startValue" : "0",
+          "useSharedSequence" : "false"
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-25 23:15:41 PDT"
+}

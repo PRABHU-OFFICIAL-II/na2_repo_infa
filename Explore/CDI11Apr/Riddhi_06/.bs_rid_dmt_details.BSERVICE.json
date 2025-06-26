@@ -1,0 +1,53 @@
+{
+  "objectInfo" : {
+    "id" : "kermNNYZ6qYbL9uV9Bo9oF",
+    "name" : "bs_rid_dmt_details",
+    "type" : "BSERVICE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "000QML2700000000002I"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      }, {
+        "name" : "000QML2800000000003O",
+        "value" : "kermNNYZ6qYbL9uV9Bo9oF@dmt_details"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "updateTime" : "2025-06-26T06:15:48.825Z",
+  "objectRefs" : [ {
+    "id" : "281GTXiu2s6fafrtZn85QS",
+    "name" : "rid_dmt_response_rest",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "000QML0B00000000016Y"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  } ],
+  "readableFileExtension" : null,
+  "readableFilePresent" : false
+}

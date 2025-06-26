@@ -1,0 +1,1323 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_rid_MappletTransformation",
+    "links" : [
+      {
+        "link" : "Source -> Joiner",
+        "groupLink" : "DefaultGroup -> Master"
+      },
+      {
+        "link" : "FF_Product -> Joiner",
+        "groupLink" : "DefaultGroup -> Detail"
+      },
+      {
+        "link" : "Joiner -> Mapplet",
+        "groupLink" : "OutputGroup -> Input"
+      },
+      {
+        "link" : "Mapplet -> Target",
+        "groupLink" : "Output -> DefaultGroup"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-04-15T15:53:36.133Z",
+        "name" : "Source",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Id"
+            },
+            "name" : "Id",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Name"
+            },
+            "name" : "Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ProductCode"
+            },
+            "name" : "ProductCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Description"
+            },
+            "name" : "Description",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 4000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsActive"
+            },
+            "name" : "IsActive",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedDate"
+            },
+            "name" : "CreatedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedById"
+            },
+            "name" : "CreatedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedDate"
+            },
+            "name" : "LastModifiedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedById"
+            },
+            "name" : "LastModifiedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SystemModstamp"
+            },
+            "name" : "SystemModstamp",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Family"
+            },
+            "name" : "Family",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ExternalDataSourceId"
+            },
+            "name" : "ExternalDataSourceId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ExternalId"
+            },
+            "name" : "ExternalId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DisplayUrl"
+            },
+            "name" : "DisplayUrl",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "QuantityUnitOfMeasure"
+            },
+            "name" : "QuantityUnitOfMeasure",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsDeleted"
+            },
+            "name" : "IsDeleted",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsArchived"
+            },
+            "name" : "IsArchived",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LastViewedDate"
+            },
+            "name" : "LastViewedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastReferencedDate"
+            },
+            "name" : "LastReferencedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "StockKeepingUnit"
+            },
+            "name" : "StockKeepingUnit",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 180,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Type"
+            },
+            "name" : "Type",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ProductClass"
+            },
+            "name" : "ProductClass",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@7ghG12FucQVebSD3y1fDW9",
+          "connectionName" : "rid_sfdc",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Salesforce",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 100000,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "Product2",
+            "label" : "Product2",
+            "objectName" : "Product2",
+            "path" : "Product2",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Id",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product ID",
+                "nativeName" : "Id",
+                "nativeType" : "id",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product Name",
+                "nativeName" : "Name",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "ProductCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product Code",
+                "nativeName" : "ProductCode",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "Description",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product Description",
+                "nativeName" : "Description",
+                "nativeType" : "textarea",
+                "original" : "false",
+                "precision" : 4000,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "IsActive",
+                "fieldType" : "CONNECTOR",
+                "label" : "Active",
+                "nativeName" : "IsActive",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Created Date",
+                "nativeName" : "CreatedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedById",
+                "fieldType" : "CONNECTOR",
+                "label" : "Created By ID",
+                "nativeName" : "CreatedById",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Modified Date",
+                "nativeName" : "LastModifiedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedById",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Modified By ID",
+                "nativeName" : "LastModifiedById",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "SystemModstamp",
+                "fieldType" : "CONNECTOR",
+                "label" : "System Modstamp",
+                "nativeName" : "SystemModstamp",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "Family",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product Family",
+                "nativeName" : "Family",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "ExternalDataSourceId",
+                "fieldType" : "CONNECTOR",
+                "label" : "External Data Source ID",
+                "nativeName" : "ExternalDataSourceId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "ExternalId",
+                "fieldType" : "CONNECTOR",
+                "label" : "External ID",
+                "nativeName" : "ExternalId",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "DisplayUrl",
+                "fieldType" : "CONNECTOR",
+                "label" : "Display URL",
+                "nativeName" : "DisplayUrl",
+                "nativeType" : "url",
+                "original" : "false",
+                "precision" : 1000,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "QuantityUnitOfMeasure",
+                "fieldType" : "CONNECTOR",
+                "label" : "Quantity Unit Of Measure",
+                "nativeName" : "QuantityUnitOfMeasure",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "IsDeleted",
+                "fieldType" : "CONNECTOR",
+                "label" : "Deleted",
+                "nativeName" : "IsDeleted",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "IsArchived",
+                "fieldType" : "CONNECTOR",
+                "label" : "Archived",
+                "nativeName" : "IsArchived",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "LastViewedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Viewed Date",
+                "nativeName" : "LastViewedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "LastReferencedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Referenced Date",
+                "nativeName" : "LastReferencedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "StockKeepingUnit",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product SKU",
+                "nativeName" : "StockKeepingUnit",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 180,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "Type",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product Type",
+                "nativeName" : "Type",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              },
+              {
+                "name" : "ProductClass",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product Class",
+                "nativeName" : "ProductClass",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product2"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-15T15:53:36.139Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "false",
+        "fieldMappingMode" : "MANUAL",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Product_ID"
+            },
+            "name" : "Product_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Product_Name"
+            },
+            "name" : "Product_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Cost"
+            },
+            "name" : "Cost",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@4fforEhFwOngc8TnSmh1MI",
+          "connectionName" : "FF_Tgt_Student_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "OrderCost.csv",
+            "label" : "OrderCost.csv",
+            "objectName" : "OrderCost.csv",
+            "path" : "OrderCost.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Product_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product_ID",
+                "nativeName" : "Product_ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "OrderCost.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Product_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product_Name",
+                "nativeName" : "Product_Name",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "OrderCost.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Cost",
+                "fieldType" : "CONNECTOR",
+                "label" : "Cost",
+                "nativeName" : "Cost",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "OrderCost.csv"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        },
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "product_id",
+              "toField" : {
+                "name" : "Product_ID"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "product_name",
+              "toField" : {
+                "name" : "Product_Name"
+              },
+              "fromFieldNames" : null
+            },
+            {
+              "fromFieldName" : "cost",
+              "toField" : {
+                "name" : "Cost"
+              },
+              "fromFieldNames" : null
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2025-04-15T15:56:38.892Z",
+        "name" : "FF_Product",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Product_ID"
+            },
+            "name" : "Product_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Product_Name"
+            },
+            "name" : "Product_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Price"
+            },
+            "name" : "Price",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Quantity"
+            },
+            "name" : "Quantity",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@h8MdVZPRIKBdgcK0Q5VhYb",
+          "connectionName" : "FF_Source_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "Product_List.csv",
+            "label" : "Product_List.csv",
+            "objectName" : "Product_List.csv",
+            "path" : "Product_List.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Product_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product ID",
+                "nativeName" : "Product ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product_List.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Product_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product Name",
+                "nativeName" : "Product Name",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product_List.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Price",
+                "fieldType" : "CONNECTOR",
+                "label" : "Price",
+                "nativeName" : "Price",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product_List.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Quantity",
+                "fieldType" : "CONNECTOR",
+                "label" : "Quantity",
+                "nativeName" : "Quantity",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Product_List.csv"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-15T15:57:46.500Z",
+        "name" : "Joiner",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Master",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "Detail",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "OutputGroup",
+            "output" : "true"
+          }
+        ],
+        "joinType" : "Normal Join",
+        "joinConditions" : [
+          {
+            "leftOperand" : "ProductCode",
+            "operator" : "=",
+            "rightOperand" : "Product_ID"
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-15T15:59:20.627Z",
+        "name" : "Mapplet",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Input",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "Output",
+            "output" : "true"
+          }
+        ],
+        "active" : "true",
+        "fieldMappingMode" : "MANUAL",
+        "saasMappletId" : "@9P1XqT3qKhBe97JxYfKwGq",
+        "saasMappletName" : "Mpplt_rid_1",
+        "type" : "NATIVE",
+        "inputGroups" : [
+          {
+            "name" : "Input",
+            "fields" : [
+              {
+                "name" : "price",
+                "platformType" : {
+                  "name" : "integer"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "quantity",
+                "platformType" : {
+                  "name" : "integer"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "product_id",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 255,
+                "scale" : 0
+              },
+              {
+                "name" : "product_name",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 255,
+                "scale" : 0
+              }
+            ]
+          }
+        ],
+        "outputGroups" : [
+          {
+            "name" : "Output",
+            "fields" : [
+              {
+                "name" : "product_id",
+                "platformType" : {
+                  "name" : "integer"
+                },
+                "precision" : 10,
+                "scale" : 0
+              },
+              {
+                "name" : "product_name",
+                "platformType" : {
+                  "name" : "string"
+                },
+                "precision" : 255,
+                "scale" : 0
+              },
+              {
+                "name" : "cost",
+                "platformType" : {
+                  "name" : "integer"
+                },
+                "precision" : 10,
+                "scale" : 0
+              }
+            ]
+          }
+        ],
+        "validForEngines" : [
+          "CDI",
+          "CDI_E"
+        ],
+        "dataAdapter" : {
+          "inputFields" : [
+            {
+              "name" : "price",
+              "fieldType" : "UNDEFINED",
+              "label" : "price",
+              "nativeType" : "integer",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0
+            },
+            {
+              "name" : "quantity",
+              "fieldType" : "UNDEFINED",
+              "label" : "quantity",
+              "nativeType" : "integer",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0
+            },
+            {
+              "name" : "product_id",
+              "fieldType" : "UNDEFINED",
+              "label" : "product_id",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 255,
+              "scale" : 0
+            },
+            {
+              "name" : "product_name",
+              "fieldType" : "UNDEFINED",
+              "label" : "product_name",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 255,
+              "scale" : 0
+            }
+          ],
+          "outputFields" : [
+            {
+              "name" : "product_id",
+              "fieldType" : "UNDEFINED",
+              "label" : "product_id",
+              "nativeType" : "integer",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0
+            },
+            {
+              "name" : "product_name",
+              "fieldType" : "UNDEFINED",
+              "label" : "product_name",
+              "nativeType" : "string",
+              "original" : "false",
+              "precision" : 255,
+              "scale" : 0
+            },
+            {
+              "name" : "cost",
+              "fieldType" : "UNDEFINED",
+              "label" : "cost",
+              "nativeType" : "integer",
+              "original" : "false",
+              "precision" : 10,
+              "scale" : 0
+            }
+          ]
+        },
+        "fieldMapping" : {
+          "fields" : [
+            {
+              "adapterField" : {
+                "name" : "product_id"
+              },
+              "name" : "Product_ID",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "product_name"
+              },
+              "name" : "Product_Name",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "price"
+              },
+              "name" : "Price",
+              "precision" : 0,
+              "scale" : 0
+            },
+            {
+              "adapterField" : {
+                "name" : "quantity"
+              },
+              "name" : "Quantity",
+              "precision" : 0,
+              "scale" : 0
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-25 23:15:45 PDT"
+}
