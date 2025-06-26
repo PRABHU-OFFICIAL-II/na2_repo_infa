@@ -1,0 +1,1843 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_rid_lookup",
+    "links" : [
+      {
+        "link" : "Src_DB_TRANSACTION -> lkp_SRC_DEALERSHIP"
+      },
+      {
+        "link" : "Src_DB_TRANSACTION -> lkp_SRC_EMPLOYEE"
+      },
+      {
+        "link" : "Src_DB_TRANSACTION -> exp_CALC_REVENUE"
+      },
+      {
+        "link" : "lkp_SRC_DEALERSHIP -> exp_LABEL_NULLS"
+      },
+      {
+        "link" : "lkp_SRC_EMPLOYEE -> exp_TRIM_STRINGS"
+      },
+      {
+        "link" : "Src_DB_TRANSACTION -> exp_PASS_THROUGH"
+      },
+      {
+        "link" : "exp_LABEL_NULLS -> Target"
+      },
+      {
+        "link" : "exp_TRIM_STRINGS -> Target"
+      },
+      {
+        "link" : "exp_CALC_REVENUE -> Target"
+      },
+      {
+        "link" : "exp_PASS_THROUGH -> Target"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-04-17T08:04:05.185Z",
+        "name" : "Src_DB_TRANSACTION",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "cust_id"
+            },
+            "name" : "cust_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "product_id"
+            },
+            "name" : "product_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_id"
+            },
+            "name" : "dealership_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "payment_desc"
+            },
+            "name" : "payment_desc",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "promo_id"
+            },
+            "name" : "promo_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "date_id"
+            },
+            "name" : "date_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "transaction_id"
+            },
+            "name" : "transaction_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_id"
+            },
+            "name" : "employee_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "time_key"
+            },
+            "name" : "time_key",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "selling_price"
+            },
+            "name" : "selling_price",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 15,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "cost"
+            },
+            "name" : "cost",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 15,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "quantity"
+            },
+            "name" : "quantity",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "discount"
+            },
+            "name" : "discount",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "holdback"
+            },
+            "name" : "holdback",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "rebate"
+            },
+            "name" : "rebate",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 2
+          },
+          {
+            "adapterField" : {
+              "name" : "transaction_date"
+            },
+            "name" : "transaction_date",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@6kp99j5UKURg398y1mxaCR",
+          "connectionName" : "Rid_sql_server",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "transactions",
+            "label" : "transactions",
+            "objectName" : "transactions",
+            "path" : "transactions",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "cust_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "cust_id",
+                "nativeName" : "cust_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "product_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "product_id",
+                "nativeName" : "product_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_id",
+                "nativeName" : "dealership_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "payment_desc",
+                "fieldType" : "CONNECTOR",
+                "label" : "payment_desc",
+                "nativeName" : "payment_desc",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "promo_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "promo_id",
+                "nativeName" : "promo_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "date_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "date_id",
+                "nativeName" : "date_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "transaction_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "transaction_id",
+                "nativeName" : "transaction_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_id",
+                "nativeName" : "employee_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "time_key",
+                "fieldType" : "CONNECTOR",
+                "label" : "time_key",
+                "nativeName" : "time_key",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "selling_price",
+                "fieldType" : "CONNECTOR",
+                "label" : "selling_price",
+                "nativeName" : "selling_price",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 15,
+                "scale" : 2,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "cost",
+                "fieldType" : "CONNECTOR",
+                "label" : "cost",
+                "nativeName" : "cost",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 15,
+                "scale" : 2,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "quantity",
+                "fieldType" : "CONNECTOR",
+                "label" : "quantity",
+                "nativeName" : "quantity",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "discount",
+                "fieldType" : "CONNECTOR",
+                "label" : "discount",
+                "nativeName" : "discount",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 2,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "holdback",
+                "fieldType" : "CONNECTOR",
+                "label" : "holdback",
+                "nativeName" : "holdback",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 2,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "rebate",
+                "fieldType" : "CONNECTOR",
+                "label" : "rebate",
+                "nativeName" : "rebate",
+                "nativeType" : "decimal",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 2,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              },
+              {
+                "name" : "transaction_date",
+                "fieldType" : "CONNECTOR",
+                "label" : "transaction_date",
+                "nativeName" : "transaction_date",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "transactions"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-17T08:04:05.186Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@6kp99j5UKURg398y1mxaCR",
+          "connectionName" : "Rid_sql_server",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "ODS_ENHANCED_TRANSACTION",
+            "label" : "ODS_ENHANCED_TRANSACTION",
+            "path" : "ODS_ENHANCED_TRANSACTION",
+            "retainMetadata" : "false"
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "true",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-17T08:09:30.139Z",
+        "name" : "lkp_SRC_DEALERSHIP",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Update Dynamic Cache Condition",
+            "value" : "TRUE"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "dealership_id",
+                    "outputName" : "IN_DEALERSHIP_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "multipleMatchPolicy" : "Use Any Value",
+        "unconnected" : "false",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "dealership_id"
+            },
+            "name" : "dealership_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_manager_id"
+            },
+            "name" : "dealership_manager_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_desc"
+            },
+            "name" : "dealership_desc",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_location"
+            },
+            "name" : "dealership_location",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_state"
+            },
+            "name" : "dealership_state",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_region"
+            },
+            "name" : "dealership_region",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_country"
+            },
+            "name" : "dealership_country",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          }
+        ],
+        "inputPortNames" : null,
+        "lookupConditions" : [
+          {
+            "leftOperand" : "dealership_id",
+            "operator" : "=",
+            "rightOperand" : "IN_DEALERSHIP_ID"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@6kp99j5UKURg398y1mxaCR",
+          "connectionName" : "Rid_sql_server",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "dealerships",
+            "label" : "dealerships",
+            "objectName" : "dealerships",
+            "path" : "dealerships",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "dealership_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_id",
+                "nativeName" : "dealership_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dealerships"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_manager_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_manager_id",
+                "nativeName" : "dealership_manager_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dealerships"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_desc",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_desc",
+                "nativeName" : "dealership_desc",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dealerships"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_location",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_location",
+                "nativeName" : "dealership_location",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dealerships"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_state",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_state",
+                "nativeName" : "dealership_state",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dealerships"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_region",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_region",
+                "nativeName" : "dealership_region",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dealerships"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_country",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_country",
+                "nativeName" : "dealership_country",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "dealerships"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-17T08:18:41.925Z",
+        "name" : "lkp_SRC_EMPLOYEE",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Lookup caching enabled",
+            "value" : "true"
+          },
+          {
+            "name" : "Lookup cache directory name",
+            "value" : "$PMCacheDir"
+          },
+          {
+            "name" : "Lookup cache persistent",
+            "value" : "false"
+          },
+          {
+            "name" : "Re-cache from lookup source",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup Data Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Lookup Index Cache Size",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Dynamic Lookup Cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Update Dynamic Cache Condition",
+            "value" : "TRUE"
+          },
+          {
+            "name" : "Output Old Value On Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Synchronize dynamic cache",
+            "value" : "false"
+          },
+          {
+            "name" : "Insert Else Update",
+            "value" : "false"
+          },
+          {
+            "name" : "Lookup source is static",
+            "value" : "false"
+          },
+          {
+            "name" : "Pre-build lookup cache",
+            "value" : "AUTO"
+          },
+          {
+            "name" : "Subsecond Precision",
+            "value" : "6"
+          },
+          {
+            "name" : "Optional",
+            "value" : "true"
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "employee_id",
+                    "outputName" : "IN_EMPLOYEE_ID"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "multipleMatchPolicy" : "Use Any Value",
+        "unconnected" : "false",
+        "useLabels" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "employee_id"
+            },
+            "name" : "employee_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_name"
+            },
+            "name" : "employee_name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_address"
+            },
+            "name" : "employee_address",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_city"
+            },
+            "name" : "employee_city",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_state"
+            },
+            "name" : "employee_state",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_zip_code"
+            },
+            "name" : "employee_zip_code",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_country"
+            },
+            "name" : "employee_country",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_phone_nmbr"
+            },
+            "name" : "employee_phone_nmbr",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_fax_nmbr"
+            },
+            "name" : "employee_fax_nmbr",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_email"
+            },
+            "name" : "employee_email",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "employee_gender"
+            },
+            "name" : "employee_gender",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "age_group"
+            },
+            "name" : "age_group",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "native_lang_desc"
+            },
+            "name" : "native_lang_desc",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "sec_lang_desc"
+            },
+            "name" : "sec_lang_desc",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ter_lang_desc"
+            },
+            "name" : "ter_lang_desc",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "position_type"
+            },
+            "name" : "position_type",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_id"
+            },
+            "name" : "dealership_id",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "regional_manager"
+            },
+            "name" : "regional_manager",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "dealership_manager"
+            },
+            "name" : "dealership_manager",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "hire_date"
+            },
+            "name" : "hire_date",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "date_entered"
+            },
+            "name" : "date_entered",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          }
+        ],
+        "inputPortNames" : null,
+        "lookupConditions" : [
+          {
+            "leftOperand" : "employee_id",
+            "operator" : "=",
+            "rightOperand" : "IN_EMPLOYEE_ID"
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@6kp99j5UKURg398y1mxaCR",
+          "connectionName" : "Rid_sql_server",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 100000,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "employees",
+            "label" : "employees",
+            "objectName" : "employees",
+            "path" : "employees",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "employee_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_id",
+                "nativeName" : "employee_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_name",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_name",
+                "nativeName" : "employee_name",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_address",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_address",
+                "nativeName" : "employee_address",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_city",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_city",
+                "nativeName" : "employee_city",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_state",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_state",
+                "nativeName" : "employee_state",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_zip_code",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_zip_code",
+                "nativeName" : "employee_zip_code",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_country",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_country",
+                "nativeName" : "employee_country",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_phone_nmbr",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_phone_nmbr",
+                "nativeName" : "employee_phone_nmbr",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_fax_nmbr",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_fax_nmbr",
+                "nativeName" : "employee_fax_nmbr",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_email",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_email",
+                "nativeName" : "employee_email",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "employee_gender",
+                "fieldType" : "CONNECTOR",
+                "label" : "employee_gender",
+                "nativeName" : "employee_gender",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "age_group",
+                "fieldType" : "CONNECTOR",
+                "label" : "age_group",
+                "nativeName" : "age_group",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "native_lang_desc",
+                "fieldType" : "CONNECTOR",
+                "label" : "native_lang_desc",
+                "nativeName" : "native_lang_desc",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "sec_lang_desc",
+                "fieldType" : "CONNECTOR",
+                "label" : "sec_lang_desc",
+                "nativeName" : "sec_lang_desc",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "ter_lang_desc",
+                "fieldType" : "CONNECTOR",
+                "label" : "ter_lang_desc",
+                "nativeName" : "ter_lang_desc",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "position_type",
+                "fieldType" : "CONNECTOR",
+                "label" : "position_type",
+                "nativeName" : "position_type",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_id",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_id",
+                "nativeName" : "dealership_id",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "regional_manager",
+                "fieldType" : "CONNECTOR",
+                "label" : "regional_manager",
+                "nativeName" : "regional_manager",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "dealership_manager",
+                "fieldType" : "CONNECTOR",
+                "label" : "dealership_manager",
+                "nativeName" : "dealership_manager",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "hire_date",
+                "fieldType" : "CONNECTOR",
+                "label" : "hire_date",
+                "nativeName" : "hire_date",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              },
+              {
+                "name" : "date_entered",
+                "fieldType" : "CONNECTOR",
+                "label" : "date_entered",
+                "nativeName" : "date_entered",
+                "nativeType" : "timestamp",
+                "original" : "false",
+                "precision" : 23,
+                "scale" : 3,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "employees"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-17T08:33:04.979Z",
+        "name" : "exp_CALC_REVENUE",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "cost"
+                  },
+                  {
+                    "inputName" : "date_id"
+                  },
+                  {
+                    "inputName" : "discount"
+                  },
+                  {
+                    "inputName" : "holdback"
+                  },
+                  {
+                    "inputName" : "payment_desc"
+                  },
+                  {
+                    "inputName" : "promo_id"
+                  },
+                  {
+                    "inputName" : "quantity"
+                  },
+                  {
+                    "inputName" : "rebate"
+                  },
+                  {
+                    "inputName" : "selling_price"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "REVENUE",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "(SELLING_PRICE * QUANTITY) - (DISCOUNT + HOLDBACK + REBATE)"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-17T08:37:57.951Z",
+        "name" : "exp_LABEL_NULLS",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "true",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "dealership_id"
+                  },
+                  {
+                    "inputName" : "dealership_location"
+                  },
+                  {
+                    "inputName" : "dealership_region"
+                  },
+                  {
+                    "inputName" : "dealership_state"
+                  }
+                ],
+                "bulkRenameOption" : {
+                  "literal" : "IN_",
+                  "suffix" : "false"
+                }
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "DEALERSHIP_LOCATION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "DECODE(TRUE, \nISNULL(IN_dealership_location), 'UNKNOWN LOC', \nIS_SPACES(IN_dealership_location), 'UNKNOWN LOC', \nLENGTH(IN_dealership_location)= 0, 'UNKNOWN LOC', \nIN_dealership_location)"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "DEALERSHIP_REGION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "DECODE(TRUE, \nISNULL(IN_dealership_region), 'UNKNOWN DESC', \nIS_SPACES(IN_dealership_region), 'UNKNOWN DESC', \nLENGTH(IN_dealership_region)= 0, 'UNKNOWN DESC', \nIN_dealership_region)"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-17T08:42:40.288Z",
+        "name" : "exp_TRIM_STRINGS",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "employee_name"
+                  },
+                  {
+                    "inputName" : "position_type"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "TRIM_EMPLOYEE_NAME",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "LTRIM(RTRIM(employee_name))"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "TRIM_POSITION_TYPE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "LTRIM(RTRIM(position_type))"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-17T08:48:24.607Z",
+        "name" : "exp_PASS_THROUGH",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true",
+                "names" : [
+                  {
+                    "inputName" : "cust_id"
+                  },
+                  {
+                    "inputName" : "product_id"
+                  },
+                  {
+                    "inputName" : "transaction_date"
+                  },
+                  {
+                    "inputName" : "transaction_id"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-25 23:15:42 PDT"
+}

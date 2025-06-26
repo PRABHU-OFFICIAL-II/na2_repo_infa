@@ -1,0 +1,2335 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_rid_transformation",
+    "links" : [
+      {
+        "link" : "src_1 -> Union",
+        "groupLink" : "DefaultGroup -> Input1"
+      },
+      {
+        "link" : "src_2 -> Union",
+        "groupLink" : "DefaultGroup -> Input2"
+      },
+      {
+        "link" : "Union -> Rank",
+        "groupLink" : "OutputGroup -> DefaultGroup"
+      },
+      {
+        "link" : "Rank -> Sorter"
+      },
+      {
+        "link" : "Sorter -> Target"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-04-15T09:52:36.728Z",
+        "name" : "src_1",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Account_ID"
+            },
+            "name" : "Account_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "First_Name"
+            },
+            "name" : "First_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Last_Name"
+            },
+            "name" : "Last_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Email"
+            },
+            "name" : "Email",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@h8MdVZPRIKBdgcK0Q5VhYb",
+          "connectionName" : "FF_Source_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "Src_acc1.csv",
+            "label" : "Src_acc1.csv",
+            "objectName" : "Src_acc1.csv",
+            "path" : "Src_acc1.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Account_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Account ID",
+                "nativeName" : "Account ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Src_acc1.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "First_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "First Name",
+                "nativeName" : "First Name",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Src_acc1.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Last_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Name",
+                "nativeName" : "Last Name",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Src_acc1.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Email",
+                "fieldType" : "CONNECTOR",
+                "label" : "Email",
+                "nativeName" : "Email",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Src_acc1.csv"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-15T09:54:27.809Z",
+        "name" : "src_2",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Id"
+            },
+            "name" : "Id",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsDeleted"
+            },
+            "name" : "IsDeleted",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MasterRecordId"
+            },
+            "name" : "MasterRecordId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AccountId"
+            },
+            "name" : "AccountId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LastName"
+            },
+            "name" : "LastName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "FirstName"
+            },
+            "name" : "FirstName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Salutation"
+            },
+            "name" : "Salutation",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Name"
+            },
+            "name" : "Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 121,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherStreet"
+            },
+            "name" : "OtherStreet",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherCity"
+            },
+            "name" : "OtherCity",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherState"
+            },
+            "name" : "OtherState",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherPostalCode"
+            },
+            "name" : "OtherPostalCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherCountry"
+            },
+            "name" : "OtherCountry",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherStateCode"
+            },
+            "name" : "OtherStateCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherCountryCode"
+            },
+            "name" : "OtherCountryCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherLatitude"
+            },
+            "name" : "OtherLatitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherLongitude"
+            },
+            "name" : "OtherLongitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherGeocodeAccuracy"
+            },
+            "name" : "OtherGeocodeAccuracy",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingStreet"
+            },
+            "name" : "MailingStreet",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingCity"
+            },
+            "name" : "MailingCity",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingState"
+            },
+            "name" : "MailingState",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingPostalCode"
+            },
+            "name" : "MailingPostalCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingCountry"
+            },
+            "name" : "MailingCountry",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingStateCode"
+            },
+            "name" : "MailingStateCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingCountryCode"
+            },
+            "name" : "MailingCountryCode",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingLatitude"
+            },
+            "name" : "MailingLatitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingLongitude"
+            },
+            "name" : "MailingLongitude",
+            "platformType" : {
+              "name" : "decimal"
+            },
+            "precision" : 18,
+            "scale" : 15
+          },
+          {
+            "adapterField" : {
+              "name" : "MailingGeocodeAccuracy"
+            },
+            "name" : "MailingGeocodeAccuracy",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Phone"
+            },
+            "name" : "Phone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Fax"
+            },
+            "name" : "Fax",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "MobilePhone"
+            },
+            "name" : "MobilePhone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "HomePhone"
+            },
+            "name" : "HomePhone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OtherPhone"
+            },
+            "name" : "OtherPhone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AssistantPhone"
+            },
+            "name" : "AssistantPhone",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ReportsToId"
+            },
+            "name" : "ReportsToId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Email"
+            },
+            "name" : "Email",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Title"
+            },
+            "name" : "Title",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 128,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Department"
+            },
+            "name" : "Department",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 80,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "AssistantName"
+            },
+            "name" : "AssistantName",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LeadSource"
+            },
+            "name" : "LeadSource",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Birthdate"
+            },
+            "name" : "Birthdate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "Description"
+            },
+            "name" : "Description",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 32000,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OwnerId"
+            },
+            "name" : "OwnerId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedDate"
+            },
+            "name" : "CreatedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "CreatedById"
+            },
+            "name" : "CreatedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedDate"
+            },
+            "name" : "LastModifiedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastModifiedById"
+            },
+            "name" : "LastModifiedById",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SystemModstamp"
+            },
+            "name" : "SystemModstamp",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastActivityDate"
+            },
+            "name" : "LastActivityDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastCURequestDate"
+            },
+            "name" : "LastCURequestDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastCUUpdateDate"
+            },
+            "name" : "LastCUUpdateDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastViewedDate"
+            },
+            "name" : "LastViewedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "LastReferencedDate"
+            },
+            "name" : "LastReferencedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "EmailBouncedReason"
+            },
+            "name" : "EmailBouncedReason",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "EmailBouncedDate"
+            },
+            "name" : "EmailBouncedDate",
+            "platformType" : {
+              "name" : "date/time"
+            },
+            "precision" : 29,
+            "scale" : 9
+          },
+          {
+            "adapterField" : {
+              "name" : "IsEmailBounced"
+            },
+            "name" : "IsEmailBounced",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PhotoUrl"
+            },
+            "name" : "PhotoUrl",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Jigsaw"
+            },
+            "name" : "Jigsaw",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "JigsawContactId"
+            },
+            "name" : "JigsawContactId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 20,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CleanStatus"
+            },
+            "name" : "CleanStatus",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IndividualId"
+            },
+            "name" : "IndividualId",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 18,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "IsPriorityRecord"
+            },
+            "name" : "IsPriorityRecord",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ContactSource"
+            },
+            "name" : "ContactSource",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 40,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Level__c"
+            },
+            "name" : "Level__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Languages__c"
+            },
+            "name" : "Languages__c",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@7ghG12FucQVebSD3y1fDW9",
+          "connectionName" : "rid_sfdc",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "Salesforce",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 100000,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "Contact",
+            "label" : "Contact",
+            "objectName" : "Contact",
+            "path" : "Contact",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Id",
+                "fieldType" : "CONNECTOR",
+                "label" : "Contact ID",
+                "nativeName" : "Id",
+                "nativeType" : "id",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "IsDeleted",
+                "fieldType" : "CONNECTOR",
+                "label" : "Deleted",
+                "nativeName" : "IsDeleted",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MasterRecordId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Master Record ID",
+                "nativeName" : "MasterRecordId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "AccountId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Account ID",
+                "nativeName" : "AccountId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastName",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Name",
+                "nativeName" : "LastName",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "FirstName",
+                "fieldType" : "CONNECTOR",
+                "label" : "First Name",
+                "nativeName" : "FirstName",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Salutation",
+                "fieldType" : "CONNECTOR",
+                "label" : "Salutation",
+                "nativeName" : "Salutation",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Full Name",
+                "nativeName" : "Name",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 121,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherStreet",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other Street",
+                "nativeName" : "OtherStreet",
+                "nativeType" : "textarea",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherCity",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other City",
+                "nativeName" : "OtherCity",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherState",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other State/Province",
+                "nativeName" : "OtherState",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherPostalCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other Zip/Postal Code",
+                "nativeName" : "OtherPostalCode",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherCountry",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other Country",
+                "nativeName" : "OtherCountry",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherStateCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other State/Province Code",
+                "nativeName" : "OtherStateCode",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherCountryCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other Country Code",
+                "nativeName" : "OtherCountryCode",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherLatitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other Latitude",
+                "nativeName" : "OtherLatitude",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherLongitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other Longitude",
+                "nativeName" : "OtherLongitude",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherGeocodeAccuracy",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other Geocode Accuracy",
+                "nativeName" : "OtherGeocodeAccuracy",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingStreet",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing Street",
+                "nativeName" : "MailingStreet",
+                "nativeType" : "textarea",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingCity",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing City",
+                "nativeName" : "MailingCity",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingState",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing State/Province",
+                "nativeName" : "MailingState",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingPostalCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing Zip/Postal Code",
+                "nativeName" : "MailingPostalCode",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingCountry",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing Country",
+                "nativeName" : "MailingCountry",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingStateCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing State/Province Code",
+                "nativeName" : "MailingStateCode",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingCountryCode",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing Country Code",
+                "nativeName" : "MailingCountryCode",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingLatitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing Latitude",
+                "nativeName" : "MailingLatitude",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingLongitude",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing Longitude",
+                "nativeName" : "MailingLongitude",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 15,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MailingGeocodeAccuracy",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mailing Geocode Accuracy",
+                "nativeName" : "MailingGeocodeAccuracy",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Phone",
+                "fieldType" : "CONNECTOR",
+                "label" : "Business Phone",
+                "nativeName" : "Phone",
+                "nativeType" : "phone",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Fax",
+                "fieldType" : "CONNECTOR",
+                "label" : "Business Fax",
+                "nativeName" : "Fax",
+                "nativeType" : "phone",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "MobilePhone",
+                "fieldType" : "CONNECTOR",
+                "label" : "Mobile Phone",
+                "nativeName" : "MobilePhone",
+                "nativeType" : "phone",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "HomePhone",
+                "fieldType" : "CONNECTOR",
+                "label" : "Home Phone",
+                "nativeName" : "HomePhone",
+                "nativeType" : "phone",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OtherPhone",
+                "fieldType" : "CONNECTOR",
+                "label" : "Other Phone",
+                "nativeName" : "OtherPhone",
+                "nativeType" : "phone",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "AssistantPhone",
+                "fieldType" : "CONNECTOR",
+                "label" : "Asst. Phone",
+                "nativeName" : "AssistantPhone",
+                "nativeType" : "phone",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "ReportsToId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Reports To ID",
+                "nativeName" : "ReportsToId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Email",
+                "fieldType" : "CONNECTOR",
+                "label" : "Email",
+                "nativeName" : "Email",
+                "nativeType" : "email",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Title",
+                "fieldType" : "CONNECTOR",
+                "label" : "Title",
+                "nativeName" : "Title",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 128,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Department",
+                "fieldType" : "CONNECTOR",
+                "label" : "Department",
+                "nativeName" : "Department",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 80,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "AssistantName",
+                "fieldType" : "CONNECTOR",
+                "label" : "Assistant's Name",
+                "nativeName" : "AssistantName",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LeadSource",
+                "fieldType" : "CONNECTOR",
+                "label" : "Lead Source",
+                "nativeName" : "LeadSource",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Birthdate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Birthdate",
+                "nativeName" : "Birthdate",
+                "nativeType" : "date",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Description",
+                "fieldType" : "CONNECTOR",
+                "label" : "Contact Description",
+                "nativeName" : "Description",
+                "nativeType" : "textarea",
+                "original" : "false",
+                "precision" : 32000,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "OwnerId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Owner ID",
+                "nativeName" : "OwnerId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Created Date",
+                "nativeName" : "CreatedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "CreatedById",
+                "fieldType" : "CONNECTOR",
+                "label" : "Created By ID",
+                "nativeName" : "CreatedById",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Modified Date",
+                "nativeName" : "LastModifiedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastModifiedById",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Modified By ID",
+                "nativeName" : "LastModifiedById",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "SystemModstamp",
+                "fieldType" : "CONNECTOR",
+                "label" : "System Modstamp",
+                "nativeName" : "SystemModstamp",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastActivityDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Activity",
+                "nativeName" : "LastActivityDate",
+                "nativeType" : "date",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastCURequestDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Stay-in-Touch Request Date",
+                "nativeName" : "LastCURequestDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastCUUpdateDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Stay-in-Touch Save Date",
+                "nativeName" : "LastCUUpdateDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastViewedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Viewed Date",
+                "nativeName" : "LastViewedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "LastReferencedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Last Referenced Date",
+                "nativeName" : "LastReferencedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "EmailBouncedReason",
+                "fieldType" : "CONNECTOR",
+                "label" : "Email Bounced Reason",
+                "nativeName" : "EmailBouncedReason",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "EmailBouncedDate",
+                "fieldType" : "CONNECTOR",
+                "label" : "Email Bounced Date",
+                "nativeName" : "EmailBouncedDate",
+                "nativeType" : "datetime",
+                "original" : "false",
+                "precision" : 24,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "IsEmailBounced",
+                "fieldType" : "CONNECTOR",
+                "label" : "Is Email Bounced",
+                "nativeName" : "IsEmailBounced",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "PhotoUrl",
+                "fieldType" : "CONNECTOR",
+                "label" : "Photo URL",
+                "nativeName" : "PhotoUrl",
+                "nativeType" : "url",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Jigsaw",
+                "fieldType" : "CONNECTOR",
+                "label" : "Data.com Key",
+                "nativeName" : "Jigsaw",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "JigsawContactId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Jigsaw Contact ID",
+                "nativeName" : "JigsawContactId",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 20,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "CleanStatus",
+                "fieldType" : "CONNECTOR",
+                "label" : "Clean Status",
+                "nativeName" : "CleanStatus",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "IndividualId",
+                "fieldType" : "CONNECTOR",
+                "label" : "Individual ID",
+                "nativeName" : "IndividualId",
+                "nativeType" : "reference",
+                "original" : "false",
+                "precision" : 18,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "IsPriorityRecord",
+                "fieldType" : "CONNECTOR",
+                "label" : "Important",
+                "nativeName" : "IsPriorityRecord",
+                "nativeType" : "boolean",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "ContactSource",
+                "fieldType" : "CONNECTOR",
+                "label" : "Creation Source",
+                "nativeName" : "ContactSource",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 40,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Level__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Level",
+                "nativeName" : "Level__c",
+                "nativeType" : "picklist",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              },
+              {
+                "name" : "Languages__c",
+                "fieldType" : "CONNECTOR",
+                "label" : "Languages",
+                "nativeName" : "Languages__c",
+                "nativeType" : "string",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Contact"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-15T10:03:23.728Z",
+        "name" : "Union",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Input1",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "Input2",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "OutputGroup",
+            "output" : "true"
+          }
+        ],
+        "fields" : [
+          {
+            "name" : "Account_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "First_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "Last_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "Email",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "inputGroups" : [
+          {
+            "name" : "Input1",
+            "fieldMappingMode" : "MANUAL",
+            "fieldMapping" : {
+              "fields" : [
+                {
+                  "name" : "Account_ID",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "Account_ID"
+                  }
+                },
+                {
+                  "name" : "First_Name",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "First_Name"
+                  }
+                },
+                {
+                  "name" : "Last_Name",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "Last_Name"
+                  }
+                },
+                {
+                  "name" : "Email",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "Email"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "name" : "Input2",
+            "fieldMappingMode" : "MANUAL",
+            "fieldMapping" : {
+              "fields" : [
+                {
+                  "name" : "AccountId",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "Account_ID"
+                  }
+                },
+                {
+                  "name" : "FirstName",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "First_Name"
+                  }
+                },
+                {
+                  "name" : "LastName",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "Last_Name"
+                  }
+                },
+                {
+                  "name" : "Email",
+                  "precision" : 0,
+                  "scale" : 0,
+                  "txField" : {
+                    "name" : "Email"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-15T10:06:01.311Z",
+        "name" : "Rank",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "numOfRows" : 6,
+        "rankField" : "Account_ID",
+        "isTop" : "true"
+      },
+      {
+        "createTime" : "2025-04-15T10:06:43.781Z",
+        "name" : "Sorter",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sorterMode" : "SIMPLE",
+        "sortEntries" : [
+          {
+            "ascending" : "true",
+            "fieldName" : "First_Name"
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-15T10:07:52.259Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@4fforEhFwOngc8TnSmh1MI",
+          "connectionName" : "FF_Tgt_Student_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "m_rid_transformation.csv",
+            "label" : "m_rid_transformation.csv",
+            "path" : "m_rid_transformation.csv",
+            "retainMetadata" : "false",
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-25 23:15:39 PDT"
+}

@@ -1,0 +1,663 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "documentType" : "DMAPPLET",
+    "name" : "mplt_rid_MappletOrders",
+    "links" : [
+      {
+        "link" : "SO_Orders -> Joiner",
+        "groupLink" : "DefaultGroup -> Master"
+      },
+      {
+        "link" : "SO_Products -> Joiner",
+        "groupLink" : "DefaultGroup -> Detail"
+      },
+      {
+        "link" : "Joiner -> Exp_OrderTotal",
+        "groupLink" : "OutputGroup -> DefaultGroup"
+      },
+      {
+        "link" : "Exp_OrderTotal -> Output"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-04-15T16:33:37.591Z",
+        "name" : "Output",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "fieldMappingMode" : "MANUAL",
+        "fields" : [
+          {
+            "name" : "ORDERID",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "name" : "Product_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "PRODUCTDESCRIPTION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "Category",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "name" : "Total",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          }
+        ],
+        "manualMappings" : {
+          "mappingList" : [
+            {
+              "fromFieldName" : "Total",
+              "toField" : {
+                "name" : "Total"
+              }
+            },
+            {
+              "fromFieldName" : "ORDERID",
+              "toField" : {
+                "name" : "ORDERID"
+              }
+            },
+            {
+              "fromFieldName" : "PRODUCTDESCRIPTION",
+              "toField" : {
+                "name" : "PRODUCTDESCRIPTION"
+              }
+            },
+            {
+              "fromFieldName" : "Product_Name",
+              "toField" : {
+                "name" : "Product_Name"
+              }
+            },
+            {
+              "fromFieldName" : "Category",
+              "toField" : {
+                "name" : "Category"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "createTime" : "2025-04-15T09:06:23.192Z",
+        "name" : "SO_Orders",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "ORDERID"
+            },
+            "name" : "ORDERID",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "QUANTITY"
+            },
+            "name" : "QUANTITY",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "CUSTOMERID"
+            },
+            "name" : "CUSTOMERID",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "SHIPMENTTRACKINGNO"
+            },
+            "name" : "SHIPMENTTRACKINGNO",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "ORDERSTATUS"
+            },
+            "name" : "ORDERSTATUS",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 50,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PRODUCTDESCRIPTION"
+            },
+            "name" : "PRODUCTDESCRIPTION",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 100,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "OUTLETID"
+            },
+            "name" : "OUTLETID",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PRODUCTID"
+            },
+            "name" : "PRODUCTID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@6kp99j5UKURg398y1mxaCR",
+          "connectionName" : "Rid_sql_server",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "SqlServer",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "ORDERS",
+            "label" : "ORDERS",
+            "objectName" : "ORDERS",
+            "path" : "ORDERS",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "ORDERID",
+                "fieldType" : "CONNECTOR",
+                "label" : "ORDERID",
+                "nativeName" : "ORDERID",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ORDERS"
+                  }
+                ]
+              },
+              {
+                "name" : "QUANTITY",
+                "fieldType" : "CONNECTOR",
+                "label" : "QUANTITY",
+                "nativeName" : "QUANTITY",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ORDERS"
+                  }
+                ]
+              },
+              {
+                "name" : "CUSTOMERID",
+                "fieldType" : "CONNECTOR",
+                "label" : "CUSTOMERID",
+                "nativeName" : "CUSTOMERID",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ORDERS"
+                  }
+                ]
+              },
+              {
+                "name" : "SHIPMENTTRACKINGNO",
+                "fieldType" : "CONNECTOR",
+                "label" : "SHIPMENTTRACKINGNO",
+                "nativeName" : "SHIPMENTTRACKINGNO",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ORDERS"
+                  }
+                ]
+              },
+              {
+                "name" : "ORDERSTATUS",
+                "fieldType" : "CONNECTOR",
+                "label" : "ORDERSTATUS",
+                "nativeName" : "ORDERSTATUS",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 50,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ORDERS"
+                  }
+                ]
+              },
+              {
+                "name" : "PRODUCTDESCRIPTION",
+                "fieldType" : "CONNECTOR",
+                "label" : "PRODUCTDESCRIPTION",
+                "nativeName" : "PRODUCTDESCRIPTION",
+                "nativeType" : "varchar",
+                "original" : "false",
+                "precision" : 100,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ORDERS"
+                  }
+                ]
+              },
+              {
+                "name" : "OUTLETID",
+                "fieldType" : "CONNECTOR",
+                "label" : "OUTLETID",
+                "nativeName" : "OUTLETID",
+                "nativeType" : "integer",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ORDERS"
+                  }
+                ]
+              },
+              {
+                "name" : "PRODUCTID",
+                "fieldType" : "CONNECTOR",
+                "label" : "PRODUCTID",
+                "nativeName" : "PRODUCTID",
+                "nativeType" : "nvarchar",
+                "original" : "false",
+                "precision" : 10,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "ORDERS"
+                  }
+                ]
+              }
+            ]
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false",
+            "advancedFilterCondition" : "ORDERS.ORDERSTATUS = 'Shipped' \n OR \n ORDERS.ORDERSTATUS = 'Delivered' "
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-15T09:15:15.247Z",
+        "name" : "Joiner",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Master",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "Detail",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "OutputGroup",
+            "output" : "true"
+          }
+        ],
+        "joinType" : "Normal Join",
+        "joinConditions" : [
+          {
+            "leftOperand" : "PRODUCTID",
+            "operator" : "=",
+            "rightOperand" : "Product_ID"
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-15T09:27:11.662Z",
+        "name" : "Exp_OrderTotal",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "Total",
+            "platformType" : {
+              "name" : "integer"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "QUANTITY*UnitPrice"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-15T09:13:17.123Z",
+        "name" : "SO_Products",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "Product_ID"
+            },
+            "name" : "Product_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Product_Name"
+            },
+            "name" : "Product_Name",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "UnitPrice"
+            },
+            "name" : "UnitPrice",
+            "platformType" : {
+              "name" : "double"
+            },
+            "precision" : 15,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "Category"
+            },
+            "name" : "Category",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@h8MdVZPRIKBdgcK0Q5VhYb",
+          "connectionName" : "FF_Source_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "Products.csv",
+            "label" : "Products.csv",
+            "objectName" : "Products.csv",
+            "path" : "Products.csv",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "Product_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product_ID",
+                "nativeName" : "Product_ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Products.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Product_Name",
+                "fieldType" : "CONNECTOR",
+                "label" : "Product Name",
+                "nativeName" : "Product Name",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Products.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "UnitPrice",
+                "fieldType" : "CONNECTOR",
+                "label" : "UnitPrice",
+                "nativeName" : "UnitPrice",
+                "nativeType" : "double",
+                "original" : "false",
+                "precision" : 15,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Products.csv"
+                  }
+                ]
+              },
+              {
+                "name" : "Category",
+                "fieldType" : "CONNECTOR",
+                "label" : "Category",
+                "nativeName" : "Category",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "Products.csv"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-25 23:15:40 PDT"
+}

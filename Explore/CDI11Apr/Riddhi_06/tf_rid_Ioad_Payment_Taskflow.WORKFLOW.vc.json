@@ -1,0 +1,46 @@
+{
+  "name" : "tf_rid_Ioad_Payment_Taskflow",
+  "errorTaskEmail" : {
+    "emails" : "riagrawal@informatica.com",
+    "emailType" : "ERROR"
+  },
+  "successTaskEmail" : {
+    "emails" : "riagrawal@informatica.com",
+    "emailType" : "SUCCESS"
+  },
+  "warningTaskEmail" : {
+    "emails" : "riagrawal@informatica.com",
+    "emailType" : "WARNING"
+  },
+  "tasks" : [
+    {
+      "taskId" : "@24qIL0hv1GQgzfq6Q54gYQ",
+      "type" : "DSS",
+      "name" : "syn_rid_OutletsLoad",
+      "stopOnError" : true,
+      "stopOnWarning" : true
+    },
+    {
+      "taskId" : "@7zKkBax25IKckh1ZzgCycc",
+      "type" : "DSS",
+      "name" : "syn_rid_lookup",
+      "stopOnError" : true,
+      "stopOnWarning" : true
+    },
+    {
+      "taskId" : "@2M9zq6SBeQjfqHvukHHn8q",
+      "type" : "DSS",
+      "name" : "syn_rid_upsert",
+      "stopOnError" : true,
+      "stopOnWarning" : true
+    },
+    {
+      "taskId" : "@fmsnOwGV9QUfL2fxvZIgMd",
+      "type" : "DMASK",
+      "name" : "mask_rid_PhoneNumber_Masking",
+      "stopOnError" : true,
+      "stopOnWarning" : true
+    }
+  ],
+  "vcsExportTime" : "2025-06-25 23:15:47 PDT"
+}

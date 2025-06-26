@@ -1,0 +1,565 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>qxWPQE8jIw8jIw8-gt-8741411-2025-04-17T12:58:46.271Z::tf.xml</types1:EntryId>
+      <types1:Name>tf_rid_BULK_LOAD_PROCESSING</types1:Name>
+      <types1:MimeType>application/xml+taskflow</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>riagrawal</types1:CreatedBy>
+      <types1:CreationDate>2025-04-17T12:58:46Z</types1:CreationDate>
+      <types1:ModifiedBy>riagrawal</types1:ModifiedBy>
+      <types1:ModificationDate>2025-05-05T09:19:17Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>riagrawal</types1:PublishedBy>
+      <types1:PublicationDate>2025-05-05T09:19:24Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/tf.tf_rid_BULK_LOAD_PROCESSING/tf_rid_BULK_LOAD_PROCESSING.tf.xml</types1:PublishedContributionId>
+      <types1:Entry>
+         <taskflow xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                   xmlns:tfm="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"
+                   xmlns:list="urn:activevos:spi:list:functions"
+                   displayName="tf_rid_BULK_LOAD_PROCESSING"
+                   name="tf_rid_BULK_LOAD_PROCESSING"
+                   overrideAPIName="false">
+            <parameterSet xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2021/04/taskflowModel.xsd"/>
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <tempFields>
+               <field description="Total row level load errors in the first three tasks"
+                      name="ROW_ERRORS"
+                      type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                     <option name="source">constant</option>
+                  </options>
+               </field>
+               <field description="Will be zero if the first three tasks succeed"
+                      name="INITIAL_TASK_STATUS"
+                      type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                     <option name="source">constant</option>
+                  </options>
+               </field>
+               <field description="Will be zero if both ROW_ERRORS and  INITIAL_TASK_STATUS are zero"
+                      name="INITIAL_LOAD_SUCCESS"
+                      type="int">
+                  <options>
+                     <option name="required">false</option>
+                     <option name="initialvalue">0</option>
+                     <option name="source">constant</option>
+                  </options>
+               </field>
+               <field description="" name="OutletsLoad" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:syn-rid-OutletsLoad-24qIL0hv1GQgzfq6Q54gYQ</option>
+                  </options>
+               </field>
+               <field description="" name="Employee" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:syn-rid-lookup-7zKkBax25IKckh1ZzgCycc</option>
+                  </options>
+               </field>
+               <field description="" name="SyncUpsert" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:syn-rid-upsert-2M9zq6SBeQjfqHvukHHn8q</option>
+                  </options>
+               </field>
+               <field description="" name="Data Task 1" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:dt-rid-DataTransfer-3Wbq4xOczOGbGmKfEE3yyb</option>
+                  </options>
+               </field>
+               <field description="" name="MappingTask" type="reference">
+                  <options>
+                     <option name="failOnNotRun">false</option>
+                     <option name="failOnFault">false</option>
+                     <option name="referenceTo">$po:mt-rid-InOutParameter-Task-2dwnmgThBjHgSaYmqDbGk3</option>
+                  </options>
+               </field>
+            </tempFields>
+            <notes/>
+            <deployment skipIfRunning="false" suspendOnFault="true" tracingLevel="verbose">
+               <rest/>
+               <emailProperties emailOnSuspend="true">
+                  <emailTo>riagrawal@informatica.com</emailTo>
+                  <emailCc/>
+                  <emailSubject>failed</emailSubject>
+                  <emailContentType>html</emailContentType>
+                  <emailBody/>
+               </emailProperties>
+            </deployment>
+            <extData>
+               <nvpair name="treatEmptyStringAsNotNull">false</nvpair>
+               <nvpair name="treatEmptyObjectListAsArray">false</nvpair>
+            </extData>
+            <flow id="a">
+               <start id="b">
+                  <link id="m9lcubl1" targetId="m9lcubl0"/>
+               </start>
+               <container id="m9lcubl0" type="parallel">
+                  <title>INITIAL_LOAD</title>
+                  <flow id="m9lcubl4">
+                     <eventContainer id="m9lcubm8">
+                        <service id="m9lcublf">
+                           <title>OutletsLoad</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">syn_rid_OutletsLoad</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">24qIL0hv1GQgzfq6Q54gYQ</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="syn-rid-OutletsLoad-24qIL0hv1GQgzfq6Q54gYQ">temp.OutletsLoad</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.OutletsLoad/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.OutletsLoad/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.OutletsLoad/fault"
+                                  id="m9lcubm6"
+                                  interrupting="true"
+                                  name="error"/>
+                           <catch faultField="temp.OutletsLoad/fault"
+                                  id="m9lcubm7"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="m9lcubl5" targetId="m9lcubl0" type="containerLink"/>
+                  </flow>
+                  <flow id="m9lcubl7">
+                     <eventContainer id="m9lcuboh">
+                        <service id="m9lcubll">
+                           <title>Employee</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">syn_rid_lookup</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">7zKkBax25IKckh1ZzgCycc</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="syn-rid-lookup-7zKkBax25IKckh1ZzgCycc">temp.Employee</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.Employee/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.Employee/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.Employee/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.Employee/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.Employee/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.Employee/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.Employee/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.Employee/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.Employee/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.Employee/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.Employee/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.Employee/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.Employee/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.Employee/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.Employee/fault"
+                                  id="m9lcubof"
+                                  interrupting="true"
+                                  name="error"/>
+                           <catch faultField="temp.Employee/fault"
+                                  id="m9lcubog"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="m9lcubl8" targetId="m9lcubl0" type="containerLink"/>
+                  </flow>
+                  <flow id="m9lcubpn">
+                     <eventContainer id="m9lcubqp">
+                        <service id="m9lcubqi">
+                           <title>SyncUpsert</title>
+                           <serviceName>ICSExecuteDataTask</serviceName>
+                           <serviceGUID/>
+                           <serviceInput>
+                              <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                              <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                              <parameter name="Task Name" source="constant" updatable="true">syn_rid_upsert</parameter>
+                              <parameter name="GUID" source="constant" updatable="true">2M9zq6SBeQjfqHvukHHn8q</parameter>
+                              <parameter name="Task Type" source="constant" updatable="true">SAAS_DSS</parameter>
+                              <parameter name="Has Inout Parameters" source="constant" updatable="true">false</parameter>
+                              <parameter name="taskField" source="nested">
+                                 <operation source="field" to="syn-rid-upsert-2M9zq6SBeQjfqHvukHHn8q">temp.SyncUpsert</operation>
+                              </parameter>
+                           </serviceInput>
+                           <serviceOutput>
+                              <operation source="field" to="temp.SyncUpsert/output/Object_Name">Object Name</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Run_Id">Run Id</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Log_Id">Log Id</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Task_Id">Task Id</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Task_Status">Task Status</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Success_Source_Rows">Success Source Rows</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Failed_Source_Rows">Failed Source Rows</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Success_Target_Rows">Success Target Rows</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Failed_Target_Rows">Failed Target Rows</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Start_Time">Start Time</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/End_Time">End Time</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/Error_Message">Error Message</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/TotalTransErrors">Total Transformation Errors</operation>
+                              <operation source="field" to="temp.SyncUpsert/output/FirstErrorCode">First Error Code</operation>
+                           </serviceOutput>
+                        </service>
+                        <events>
+                           <catch faultField="temp.SyncUpsert/fault"
+                                  id="m9lcubqn"
+                                  interrupting="true"
+                                  name="error"/>
+                           <catch faultField="temp.SyncUpsert/fault"
+                                  id="m9lcubqo"
+                                  interrupting="true"
+                                  name="warning"/>
+                        </events>
+                     </eventContainer>
+                     <link id="m9lcubpo" targetId="m9lcubl0" type="containerLink"/>
+                  </flow>
+                  <link id="m9lcubl3" targetId="m9lcubl4" type="containerLink"/>
+                  <link id="m9lcubl6" targetId="m9lcubl7" type="containerLink"/>
+                  <link id="m9lcubpm" targetId="m9lcubpn" type="containerLink"/>
+                  <link id="m9lcubs0" targetId="m9lcubrz"/>
+               </container>
+               <container id="m9ldd4gi" type="exclusive">
+                  <title>DID_INITIAL_LOAD_SUCCEED</title>
+                  <flow id="m9ldd4gm">
+                     <container id="m9ldd4hf" type="parallel">
+                        <title>FINAL_LOAD</title>
+                        <flow id="m9ldd4hh">
+                           <eventContainer id="m9lwhle6">
+                              <service id="m9lwhldn">
+                                 <title>Data Task 1</title>
+                                 <serviceName>DIExecuteServiceTaskDataTransferTaskImpl</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">dt_rid_DataTransfer</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">3Wbq4xOczOGbGmKfEE3yyb</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">DTT</parameter>
+                                    <parameter name="serviceProviderId" source="constant" updatable="true">dtt</parameter>
+                                    <parameter name="serviceProviderContextPath"
+                                               source="constant"
+                                               updatable="true">dtt/</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="dt-rid-DataTransfer-3Wbq4xOczOGbGmKfEE3yyb">temp.Data Task 1</operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.Data Task 1/output/runId">runId</operation>
+                                    <operation source="field" to="temp.Data Task 1/output/status">status</operation>
+                                    <operation source="field" to="temp.Data Task 1/output/successRows">successRows</operation>
+                                    <operation source="field" to="temp.Data Task 1/output/failedRows">failedRows</operation>
+                                    <operation source="field" to="temp.Data Task 1/output/errorMessage">errorMessage</operation>
+                                 </serviceOutput>
+                              </service>
+                              <events>
+                                 <catch faultField="temp.Data Task 1/fault"
+                                        id="m9lwhle4"
+                                        interrupting="true"
+                                        name="error"/>
+                                 <catch faultField="temp.Data Task 1/fault"
+                                        id="m9lwhle5"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <link id="m9ldd4hi" targetId="m9ldd4hf" type="containerLink"/>
+                        </flow>
+                        <flow id="m9ldd4hk">
+                           <eventContainer id="m9lwhlf6">
+                              <service id="m9lwhlev">
+                                 <title>MappingTask</title>
+                                 <serviceName>ICSExecuteDataTask</serviceName>
+                                 <serviceGUID/>
+                                 <serviceInput>
+                                    <parameter name="Wait for Task to Complete" source="constant" updatable="true">true</parameter>
+                                    <parameter name="Max Wait" source="constant" updatable="true">604800</parameter>
+                                    <parameter name="Task Name" source="constant" updatable="true">mt_rid_InOutParameter_Task</parameter>
+                                    <parameter name="GUID" source="constant" updatable="true">2dwnmgThBjHgSaYmqDbGk3</parameter>
+                                    <parameter name="Task Type" source="constant" updatable="true">MCT</parameter>
+                                    <parameter name="Has Inout Parameters" source="constant" updatable="true">true</parameter>
+                                    <parameter name="taskField" source="nested">
+                                       <operation source="field" to="mt-rid-InOutParameter-Task-2dwnmgThBjHgSaYmqDbGk3">temp.MappingTask</operation>
+                                    </parameter>
+                                 </serviceInput>
+                                 <serviceOutput>
+                                    <operation source="field" to="temp.MappingTask/output/Object_Name">Object Name</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Run_Id">Run Id</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Log_Id">Log Id</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Task_Id">Task Id</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Task_Status">Task Status</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Success_Source_Rows">Success Source Rows</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Failed_Source_Rows">Failed Source Rows</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Success_Target_Rows">Success Target Rows</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Failed_Target_Rows">Failed Target Rows</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Start_Time">Start Time</operation>
+                                    <operation source="field" to="temp.MappingTask/output/End_Time">End Time</operation>
+                                    <operation source="field" to="temp.MappingTask/output/Error_Message">Error Message</operation>
+                                    <operation source="field" to="temp.MappingTask/output/TotalTransErrors">Total Transformation Errors</operation>
+                                    <operation source="field" to="temp.MappingTask/output/FirstErrorCode">First Error Code</operation>
+                                    <operation source="field" to="temp.MappingTask/inout/p_orderid">p_orderid</operation>
+                                 </serviceOutput>
+                              </service>
+                              <events>
+                                 <catch faultField="temp.MappingTask/fault"
+                                        id="m9lwhlf4"
+                                        interrupting="true"
+                                        name="error"/>
+                                 <catch faultField="temp.MappingTask/fault"
+                                        id="m9lwhlf5"
+                                        interrupting="true"
+                                        name="warning"/>
+                              </events>
+                           </eventContainer>
+                           <link id="m9ldd4hl" targetId="m9ldd4hf" type="containerLink"/>
+                        </flow>
+                        <link id="m9ldd4hg" targetId="m9ldd4hh" type="containerLink"/>
+                        <link id="m9ldd4hj" targetId="m9ldd4hk" type="containerLink"/>
+                     </container>
+                     <link id="m9ldd4gn" targetId="m9ldd4gi" type="containerLink"/>
+                  </flow>
+                  <flow id="m9ldd4gp">
+                     <service id="m9lwhlgy">
+                        <title>FAILURE_NOTIFICATION</title>
+                        <serviceName>emailNotificationService</serviceName>
+                        <serviceGUID/>
+                        <serviceInput>
+                           <parameter name="Email To" source="constant">riagrawal@informatica.com</parameter>
+                           <parameter name="Email Cc" source="constant"/>
+                           <parameter name="Email Bcc" source="constant"/>
+                           <parameter name="Email Subject" source="constant">PROBLEM  WITH BULK LOAD PROCESSING</parameter>
+                           <parameter name="Email Content Type" source="constant">text</parameter>
+                           <parameter name="Email Body" source="constant"/>
+                        </serviceInput>
+                        <serviceOutput/>
+                        <link id="m9lwhli0" targetId="m9lwhlhz"/>
+                     </service>
+                     <end id="m9lwhlhz">
+                        <title>Failure</title>
+                     </end>
+                  </flow>
+                  <link id="m9ldd4gl" targetId="m9ldd4gm" type="containerLink">
+                     <condition source="formula">
+                        <function name="equals">
+                           <arg name="left">{$temp.INITIAL_LOAD_SUCCESS}</arg>
+                           <arg name="right">{3}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="m9ldd4go" targetId="m9ldd4gp" type="containerLink"/>
+                  <link id="m9ldd4gk" targetId="c"/>
+               </container>
+               <assignment id="m9lcubrz">
+                  <title>INITIAL_LOAD_SUCCESS</title>
+                  <operation source="formula" to="temp.INITIAL_TASK_STATUS">
+                     <expression language="XQuery">$temp.OutletsLoad[1]/output[1]/Task_Status 
++ 
+$temp.Employee[1]/output[1]/Task_Status 
++ 
+$temp.SyncUpsert[1]/output[1]/Task_Status</expression>
+                  </operation>
+                  <operation source="formula" to="temp.ROW_ERRORS">
+                     <expression language="XQuery">$temp.OutletsLoad[1]/output[1]/Failed_Target_Rows 
++ 
+$temp.OutletsLoad[1]/output[1]/TotalTransErrors 
++ 
+$temp.Employee[1]/output[1]/Failed_Target_Rows 
++ 
+$temp.Employee[1]/output[1]/TotalTransErrors 
++ 
+$temp.SyncUpsert[1]/output[1]/Failed_Target_Rows 
++ 
+$temp.SyncUpsert[1]/output[1]/TotalTransErrors</expression>
+                  </operation>
+                  <operation source="formula" to="temp.INITIAL_LOAD_SUCCESS">
+                     <expression language="XQuery">$temp.INITIAL_TASK_STATUS 
++ 
+$temp.ROW_ERRORS</expression>
+                  </operation>
+                  <link id="m9ldd4gj" targetId="m9ldd4gi"/>
+               </assignment>
+               <end id="c">
+                  <title>SUCCEEDED_AND_DONE</title>
+               </end>
+            </flow>
+            <dependencies>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="syn-rid-OutletsLoad-24qIL0hv1GQgzfq6Q54gYQ"
+                              isByCopy="true"
+                              name="syn-rid-OutletsLoad-24qIL0hv1GQgzfq6Q54gYQ">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="syn-rid-lookup-7zKkBax25IKckh1ZzgCycc"
+                              isByCopy="true"
+                              name="syn-rid-lookup-7zKkBax25IKckh1ZzgCycc">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="syn-rid-upsert-2M9zq6SBeQjfqHvukHHn8q"
+                              isByCopy="true"
+                              name="syn-rid-upsert-2M9zq6SBeQjfqHvukHHn8q">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="dt-rid-DataTransfer-3Wbq4xOczOGbGmKfEE3yyb"
+                              isByCopy="true"
+                              name="dt-rid-DataTransfer-3Wbq4xOczOGbGmKfEE3yyb">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              displayName="mt-rid-InOutParameter-Task-2dwnmgThBjHgSaYmqDbGk3"
+                              isByCopy="true"
+                              name="mt-rid-InOutParameter-Task-2dwnmgThBjHgSaYmqDbGk3">
+                  <description/>
+                  <tags/>
+                  <detail>
+                     <field label="InOut Parameters"
+                            name="inout"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="TaskProperties Parameters"
+                            name="taskProperties"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Output Parameters"
+                            name="output"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Fault"
+                            name="fault"
+                            nullable="true"
+                            required="false"
+                            type="reference"/>
+                     <field label="Max Wait (Seconds)"
+                            name="Max_Wait"
+                            nullable="true"
+                            required="false"
+                            type="int"/>
+                  </detail>
+               </processObject>
+            </dependencies>
+         </taskflow>
+      </types1:Entry>
+      <types1:GUID>7UOr9zuBkoPke9hAlxTq2m</types1:GUID>
+      <types1:DisplayName>tf_rid_BULK_LOAD_PROCESSING</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2025-06-26T06:15:47.206Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,58 @@
+{
+  "name" : "dt_rid_DataTransfer",
+  "state" : "VALID",
+  "runtimeEnvironmentId" : "000QML250000000000HA",
+  "runtimeEnvironmentName" : "invlinux02.informatica.com",
+  "properties" : [
+    {
+      "name" : "Target",
+      "type" : "TARGET",
+      "connectionId" : "000QML0B00000000014K",
+      "connectionName" : "FF_Tgt_Student_rid",
+      "targetObject" : "dt_rid_customerName.csv",
+      "newObject" : true,
+      "truncateTarget" : false,
+      "bulkApiDBTarget" : false,
+      "operationType" : "Insert",
+      "handleSpecialChars" : false
+    },
+    {
+      "name" : "$p_field_map$",
+      "type" : "FIELD_MAPPING"
+    },
+    {
+      "name" : "$p_filter_src$",
+      "type" : "FILTER",
+      "text" : "TRUE",
+      "advancedFilterExpression" : false
+    },
+    {
+      "name" : "$p_exp_fields$",
+      "type" : "EXPRESSION"
+    },
+    {
+      "name" : "$p_filter_lkp$",
+      "type" : "FILTER",
+      "text" : "TRUE",
+      "advancedFilterExpression" : false
+    },
+    {
+      "name" : "Lookup",
+      "type" : "LOOKUP",
+      "connectionId" : "000QML0B00000000014J",
+      "lookupObject" : "Order_Status.csv",
+      "lookupCondition" : "CUST_ID = SRC_CUST_ID"
+    },
+    {
+      "name" : "Source",
+      "type" : "SOURCE",
+      "connectionId" : "000QML0B00000000014M",
+      "connectionName" : "Rid_sql_server",
+      "object" : {
+        "name" : "CUSTOMERS1",
+        "metadataUpdated" : false
+      }
+    }
+  ],
+  "vcsExportTime" : "2025-06-25 23:15:40 PDT"
+}

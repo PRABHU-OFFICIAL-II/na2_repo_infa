@@ -1,0 +1,787 @@
+{
+  "content" : {
+    "allowMaxFieldLength" : "false",
+    "bigIntConvertType" : "ONLY_BIGINT",
+    "documentType" : "MAPPING",
+    "name" : "m_rid_Full_outer_join",
+    "links" : [
+      {
+        "link" : "Src_FF_Product_CURR_DAY_LOAD -> exp_cr_MDF_CDL"
+      },
+      {
+        "link" : "Src_FF_Product_PREV_DAY_LOAD -> exp_cr_MDF_PDL"
+      },
+      {
+        "link" : "exp_cr_MDF_PDL -> Joiner",
+        "groupLink" : "DefaultGroup -> Detail"
+      },
+      {
+        "link" : "exp_cr_MDF_CDL -> Joiner",
+        "groupLink" : "DefaultGroup -> Master"
+      },
+      {
+        "link" : "Joiner -> exp_set_DML_FLAG",
+        "groupLink" : "OutputGroup -> DefaultGroup"
+      },
+      {
+        "link" : "exp_set_DML_FLAG -> Filter"
+      },
+      {
+        "link" : "Filter -> Target"
+      }
+    ],
+    "transformations" : [
+      {
+        "createTime" : "2025-04-18T01:12:00.835Z",
+        "name" : "Src_FF_Product_CURR_DAY_LOAD",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "_PRODUCT_ID"
+            },
+            "name" : "_PRODUCT_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "GROUP_ID"
+            },
+            "name" : "GROUP_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PRODUCT_DESC"
+            },
+            "name" : "PRODUCT_DESC",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "GROUP_DESC"
+            },
+            "name" : "GROUP_DESC",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DIVISION_DESC"
+            },
+            "name" : "DIVISION_DESC",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@h8MdVZPRIKBdgcK0Q5VhYb",
+          "connectionName" : "FF_Source_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "product_CURR_DAY_LOAD.txt",
+            "label" : "product_CURR_DAY_LOAD.txt",
+            "objectName" : "product_CURR_DAY_LOAD.txt",
+            "path" : "product_CURR_DAY_LOAD.txt",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "_PRODUCT_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "#PRODUCT_ID",
+                "nativeName" : "#PRODUCT_ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_CURR_DAY_LOAD.txt"
+                  }
+                ]
+              },
+              {
+                "name" : "GROUP_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "GROUP_ID",
+                "nativeName" : "GROUP_ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_CURR_DAY_LOAD.txt"
+                  }
+                ]
+              },
+              {
+                "name" : "PRODUCT_DESC",
+                "fieldType" : "CONNECTOR",
+                "label" : "PRODUCT_DESC",
+                "nativeName" : "PRODUCT_DESC",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_CURR_DAY_LOAD.txt"
+                  }
+                ]
+              },
+              {
+                "name" : "GROUP_DESC",
+                "fieldType" : "CONNECTOR",
+                "label" : "GROUP_DESC",
+                "nativeName" : "GROUP_DESC",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_CURR_DAY_LOAD.txt"
+                  }
+                ]
+              },
+              {
+                "name" : "DIVISION_DESC",
+                "fieldType" : "CONNECTOR",
+                "label" : "DIVISION_DESC",
+                "nativeName" : "DIVISION_DESC",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_CURR_DAY_LOAD.txt"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : "|",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-18T01:12:00.835Z",
+        "name" : "Target",
+        "advancedProperties" : [
+          {
+            "name" : "Forward Rejected Rows",
+            "value" : "true"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "Append if Exists",
+            "value" : "NO"
+          },
+          {
+            "name" : "Create Target Directory",
+            "value" : "NO"
+          },
+          {
+            "name" : "Header Options",
+            "value" : "Output Field Names"
+          },
+          {
+            "name" : "Output Type",
+            "value" : "File"
+          }
+        ],
+        "createTarget" : "true",
+        "fieldMappingMode" : "BY_NAME",
+        "inputSorted" : "false",
+        "schemaProviderType" : "SELECTED_OBJECT",
+        "updateColumns" : null,
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "dataAdapter" : {
+          "connectionId" : "saas:@4fforEhFwOngc8TnSmh1MI",
+          "connectionName" : "FF_Tgt_Student_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "bulkOptions" : {
+            "hardDelete" : "false",
+            "maxRowsPerRequest" : 0,
+            "monitorBulk" : "false",
+            "monitorBulkV2" : "false",
+            "pkChunkingEnabled" : "false",
+            "pkChunkingSize" : 0,
+            "serialMode" : "false",
+            "useBulkApi" : "false",
+            "useBulkApiV2" : "false"
+          },
+          "object" : {
+            "name" : "m_rid_FOJ_DML_CHECK.csv",
+            "label" : "m_rid_FOJ_DML_CHECK.csv",
+            "path" : "m_rid_FOJ_DML_CHECK.csv",
+            "retainMetadata" : "false",
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : ",",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "writeOptions" : {
+            "batchSize" : 0,
+            "bulkApi" : "false",
+            "handleDecimalRoundOff" : "false",
+            "handleSpecialChars" : "false",
+            "operations" : [
+              "Insert"
+            ],
+            "setFieldsToNull" : "false",
+            "truncate" : "false",
+            "useErrorFile" : "false",
+            "useExactSrcNames" : "false",
+            "useSuccessFile" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-18T01:12:00.835Z",
+        "name" : "Src_FF_Product_PREV_DAY_LOAD",
+        "advancedProperties" : [
+          {
+            "name" : "Tracing Level",
+            "value" : "Normal"
+          },
+          {
+            "name" : "Output is deterministic",
+            "value" : "false"
+          },
+          {
+            "name" : "Thousand Separator",
+            "value" : "None"
+          },
+          {
+            "name" : "Decimal Separator",
+            "value" : "."
+          }
+        ],
+        "groups" : [
+          {
+            "input" : "false",
+            "name" : "DefaultGroup",
+            "output" : "true"
+          }
+        ],
+        "sessionProperties" : [
+          {
+            "name" : "File Reader Truncate String Null",
+            "value" : "NO"
+          }
+        ],
+        "generateFilenamePort" : "false",
+        "useLabels" : "false",
+        "useSequenceFields" : "false",
+        "fields" : [
+          {
+            "adapterField" : {
+              "name" : "_PRODUCT_ID"
+            },
+            "name" : "_PRODUCT_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "GROUP_ID"
+            },
+            "name" : "GROUP_ID",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "PRODUCT_DESC"
+            },
+            "name" : "PRODUCT_DESC",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "GROUP_DESC"
+            },
+            "name" : "GROUP_DESC",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          },
+          {
+            "adapterField" : {
+              "name" : "DIVISION_DESC"
+            },
+            "name" : "DIVISION_DESC",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 255,
+            "scale" : 0
+          }
+        ],
+        "dataAdapter" : {
+          "connectionId" : "saas:@h8MdVZPRIKBdgcK0Q5VhYb",
+          "connectionName" : "FF_Source_rid",
+          "excludeDynamicFileNameField" : "false",
+          "objectType" : "SINGLE",
+          "typeSystem" : "CSVFile",
+          "useDynamicFileName" : "false",
+          "object" : {
+            "name" : "product_PREV_DAY_LOAD.txt",
+            "label" : "product_PREV_DAY_LOAD.txt",
+            "objectName" : "product_PREV_DAY_LOAD.txt",
+            "path" : "product_PREV_DAY_LOAD.txt",
+            "retainMetadata" : "false",
+            "fields" : [
+              {
+                "name" : "_PRODUCT_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "#PRODUCT_ID",
+                "nativeName" : "#PRODUCT_ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_PREV_DAY_LOAD.txt"
+                  }
+                ]
+              },
+              {
+                "name" : "GROUP_ID",
+                "fieldType" : "CONNECTOR",
+                "label" : "GROUP_ID",
+                "nativeName" : "GROUP_ID",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_PREV_DAY_LOAD.txt"
+                  }
+                ]
+              },
+              {
+                "name" : "PRODUCT_DESC",
+                "fieldType" : "CONNECTOR",
+                "label" : "PRODUCT_DESC",
+                "nativeName" : "PRODUCT_DESC",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_PREV_DAY_LOAD.txt"
+                  }
+                ]
+              },
+              {
+                "name" : "GROUP_DESC",
+                "fieldType" : "CONNECTOR",
+                "label" : "GROUP_DESC",
+                "nativeName" : "GROUP_DESC",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_PREV_DAY_LOAD.txt"
+                  }
+                ]
+              },
+              {
+                "name" : "DIVISION_DESC",
+                "fieldType" : "CONNECTOR",
+                "label" : "DIVISION_DESC",
+                "nativeName" : "DIVISION_DESC",
+                "nativeType" : "nstring",
+                "original" : "false",
+                "precision" : 255,
+                "scale" : 0,
+                "properties" : [
+                  {
+                    "name" : "parentObject",
+                    "value" : "product_PREV_DAY_LOAD.txt"
+                  }
+                ]
+              }
+            ],
+            "fileAttrs" : {
+              "consecutiveDelimiter" : "false",
+              "delimiter" : "|",
+              "firstDataRow" : 2,
+              "firstDataRowAsHeader" : "false",
+              "headerLineNo" : 1,
+              "multiDelimitersAsAnd" : "true",
+              "rowDelimiter" : 0,
+              "textQualifier" : "\""
+            }
+          },
+          "readOptions" : {
+            "commandType" : 0,
+            "descending" : "false",
+            "queryAll" : "false",
+            "rowLimit" : 0,
+            "selectDistinct" : "false"
+          }
+        }
+      },
+      {
+        "createTime" : "2025-04-18T01:17:06.323Z",
+        "name" : "exp_cr_MDF_CDL",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "all_fields",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "MACRO_INPUT",
+            "macroInputRule" : {
+              "bulkRename" : "false",
+              "include" : "true"
+            }
+          },
+          {
+            "name" : "v_concat_whole_rec_CDL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1500,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "%OPR_CONCAT[%all_fields%]%"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "o_MD5_CURR_DAY_LOAD",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 32,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "MD5(v_concat_whole_rec_CDL)"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-18T01:17:06.323Z",
+        "name" : "exp_cr_MDF_PDL",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "name" : "all_fields",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 10,
+            "scale" : 0,
+            "expFieldType" : "MACRO_INPUT",
+            "macroInputRule" : {
+              "bulkRename" : "false",
+              "include" : "true"
+            }
+          },
+          {
+            "name" : "v_concat_whole_rec_PDL",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 1500,
+            "scale" : 0,
+            "expFieldType" : "VARIABLE",
+            "expression" : "%OPR_CONCAT[%all_fields%]%"
+          },
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "o_MD5_PREV_DAY_LOAD",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 32,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "MD5(v_concat_whole_rec_PDL)"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-18T01:24:14.790Z",
+        "name" : "Joiner",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "Master",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "true",
+                "include" : "true",
+                "bulkRenameOption" : {
+                  "literal" : "CURR_DAY_LOAD",
+                  "suffix" : "false"
+                }
+              }
+            ]
+          },
+          {
+            "input" : "true",
+            "name" : "Detail",
+            "output" : "false",
+            "rules" : [
+              {
+                "bulkRename" : "true",
+                "include" : "true",
+                "bulkRenameOption" : {
+                  "literal" : "PREV_DAY_LOAD",
+                  "suffix" : "false"
+                }
+              }
+            ]
+          },
+          {
+            "input" : "false",
+            "name" : "OutputGroup",
+            "output" : "true"
+          }
+        ],
+        "joinType" : "Full Outer Join",
+        "joinConditions" : [
+          {
+            "leftOperand" : "CURR_DAY_LOADPRODUCT_DESC",
+            "operator" : "=",
+            "rightOperand" : "PREV_DAY_LOADPRODUCT_DESC"
+          }
+        ]
+      },
+      {
+        "createTime" : "2025-04-18T01:26:39.804Z",
+        "name" : "exp_set_DML_FLAG",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "windowConfigurationEnabled" : "false",
+        "fields" : [
+          {
+            "defaultValue" : "ERROR('transformation error')",
+            "name" : "o_DML_CODE",
+            "platformType" : {
+              "name" : "string"
+            },
+            "precision" : 3,
+            "scale" : 0,
+            "expFieldType" : "OUTPUT",
+            "expression" : "DECODE (TRUE, \nNOT ISNULL (CURR_DAY_LOAD_PRODUCT_ID) \nAND ISNULL (PREV_DAY_LOAD_PRODUCT_ID), 'INS', \nNOT ISNULL (CURR_DAY_LOAD_PRODUCT_ID) \nAND \nNOT ISNULL (PREV_DAY_LOAD_PRODUCT_ID) \nAND \nCURR_DAY_LOADo_MD5_CURR_DAY_LOAD \n!= \nPREV_DAY_LOADo_MD5_PREV_DAY_LOAD, 'UPD', \nNOT ISNULL (CURR_DAY_LOAD_PRODUCT_ID) \nAND \nNOT ISNULL (PREV_DAY_LOAD_PRODUCT_ID) \nAND \nCURR_DAY_LOADo_MD5_CURR_DAY_LOAD \n= \nPREV_DAY_LOADo_MD5_PREV_DAY_LOAD, 'DUP', \nISNULL (CURR_DAY_LOAD_PRODUCT_ID) \nAND \nNOT ISNULL (PREV_DAY_LOAD_PRODUCT_ID), 'DEL', \n'REJ' \n)"
+          }
+        ],
+        "windowSpec" : {
+          "allRowsFollowing" : "false",
+          "allRowsPreceding" : "false",
+          "endOffset" : 0,
+          "startOffset" : 0,
+          "partitionKeys" : null
+        }
+      },
+      {
+        "createTime" : "2025-04-18T01:28:07.987Z",
+        "name" : "Filter",
+        "groups" : [
+          {
+            "input" : "true",
+            "name" : "DefaultGroup",
+            "output" : "true",
+            "rules" : [
+              {
+                "bulkRename" : "false",
+                "include" : "true"
+              }
+            ]
+          }
+        ],
+        "advancedFilterCondition" : "o_DML_CODE != 'DUP' OR CURR_DAY_LOAD_PRODUCT_ID = '2001'"
+      }
+    ]
+  },
+  "vcsExportTime" : "2025-06-25 23:15:40 PDT"
+}
