@@ -1,6 +1,6 @@
 {
   "objectInfo" : {
-    "id" : "4ijcrkIWZ6ijFbj3YBhH4F",
+    "id" : "2j2QnuwrdftbzlO747mPiB",
     "name" : "EXGS-C360-BS-ERICHMNT-API",
     "type" : "BSERVICE",
     "metadata" : {
@@ -9,14 +9,14 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "000QML2700000000002G"
+        "repoHandle" : "01D4T427000000000008"
       },
       "contextAttributes" : [ {
         "name" : "id",
         "value" : "@1"
       }, {
-        "name" : "000QML2800000000003L",
-        "value" : "4ijcrkIWZ6ijFbj3YBhH4F@Enrichment_APIOperation"
+        "name" : "01D4T42800000000000B",
+        "value" : "2j2QnuwrdftbzlO747mPiB@Enrichment_APIOperation"
       } ],
       "additionalInfo" : {
         "description" : "",
@@ -26,10 +26,10 @@
     }
   },
   "dataFileExtension" : "zip",
-  "updateTime" : "2025-06-26T06:15:48.820Z",
+  "updateTime" : "2025-07-29T13:13:46.378Z",
   "objectRefs" : [ {
-    "id" : "h8MdVZPRIKBdgcK0Q5VhYb",
-    "name" : "FF_Source_rid",
+    "id" : "8yGWo4KZC38bAH0qHXiKM5",
+    "name" : "FLAT FILE",
     "type" : "Connection",
     "metadata" : {
       "modelVersion" : {
@@ -37,7 +37,7 @@
         "minor" : 0
       },
       "repoInfo" : {
-        "repoHandle" : "000QML0B00000000014J"
+        "repoHandle" : "01D4T40B000000000007"
       },
       "contextAttributes" : null,
       "additionalInfo" : {
